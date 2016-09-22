@@ -10,38 +10,24 @@ const Gulp = require("gulp"),
       Delete = require('del');
 
 /** gulp */
-Gulp.task('pack', () => {
+Gulp.task('express', () => {
   const server = './mock/server.js';
-  const source = './artifact/partials/';
-  const target = './artifact/bundles';
   Nodemon({
     script: server,
     execMap: {js: 'node --harmony'},
     env: {'NODE_ENV': 'development'}
   });
-  const combine = () => {
-    Gulp.src([source + '**/*.less'])
-      .pipe(Concat('styles.css'))
-      .pipe(Less())
-      .pipe(Gulp.dest(target));
-    Gulp.src([source + 'app.js', source + '**/*.js'])
-      .pipe(Concat('scripts.js'))
-      .pipe(Gulp.dest(target));
-  };
-  combine();
-  Gulp.watch([source + '**/*.less', source + 'app.js', source + '**/*.js'], combine);
 });
 
 /** gulp reload*/
-Gulp.task('default', ['pack'], () => {
+Gulp.task('default', ['express'], () => {
   const target = [
     './artifact/index.html',
-    './artifact/partials/**/*.html',
-    './artifact/bundles/**/*'
+    './artifact/partials/**/*'
   ];
   Connect.server({
     root: 'artifact',
-    port: 5006,
+    port: 5001,
     livereload: true
   });
   Gulp.watch(target, () => {

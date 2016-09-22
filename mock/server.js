@@ -8,7 +8,7 @@ const Express = require('express'),
 /** Middleware */
 App.use('/wiserv', Express.static('./artifact'));
 App.use(Cors({
-  origin: 'http://localhost:5006',
+  origin: 'http://localhost:5001',
   methods: 'GET, POST, PUT, DELETE, OPTIONS',
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
@@ -19,8 +19,8 @@ App.use('/', (request, response, next) => {
   Middleware.log(request, response);
   next();
 });
-App.listen(5005);
-console.info(Color.yellow('Mock started on http://localhost:5005/wiserv'));
+App.listen(5002);
+console.info(Color.yellow('Mock started on http://localhost:5002/wiserv'));
 
 /** Basic config for express */
 App.use('/', require('./login/api'));
