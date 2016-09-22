@@ -1,0 +1,64 @@
+<div id="statistic">
+  <section class='wiserv-ui'>
+    <div class="panel panel-primary patch">
+      <div class="panel-heading"></div>
+      <div class="panel-body">
+        <div class='search-box'>
+          <div class='search-input'>
+            <input type='text' ng-model='statistic.keyword' placeholder='输入案由、关键词' ng-change='statistic.filterBy()' ng-keydown='statistic.keydown($event)'/>
+          </div>
+          <div class='search-btn'>
+            <button type='button' ng-click='statistic.search()' class='btn-search'>搜索</button>
+          </div>
+          <div class='suggest-result' ng-show='statistic.resultShow && statistic.keyword'>
+            <div class='search-type' ng-repeat-start='obj in statistic.suggest'>{{obj.tableType}}</div>
+            <ul ng-repeat-end>
+              <li ng-repeat='item in obj.autoFillInfo' data-type={{obj.tableType}} ng-click='statistic.writeback($event)'>{{item}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class='main-statistic'>
+          <ul>
+            <li>
+              <a class='s-icon laws' ui-sref="repository.repositoryLaws"><i class='fa fa-book'></i></a>
+              <span class='item-text'>
+                <p class='head-title'>法条库</p>
+                <p>共
+                  <strong>{{statistic.data.fa_tiao}}</strong>
+                  条</p>
+                <p>今日新增
+                  <strong>{{statistic.today.fa_tiao}}</strong>
+                  条</p>
+              </span>
+            </li>
+            <li>
+              <a class='s-icon laws' ui-sref="repository.repositorySummary"><i class='fa fa-tags'></i></a>
+              <span class='item-text'>
+                <p class='head-title'>案由库</p>
+                <p>共
+                  <strong>{{statistic.data.an_you}}</strong>
+                  条</p>
+                <p>今日新增
+                  <strong>{{statistic.today.an_you}}</strong>
+                  条</p>
+              </span>
+            </li>
+            <li>
+              <a class='s-icon laws' ui-sref="repository.judgementLib"><i class='fa fa-list-alt'></i></a>
+              <span class='item-text'>
+                <p class='head-title'>裁判文书库</p>
+                <p>共
+                  <strong>{{statistic.data.wen_shu}}</strong>
+                  条</p>
+                <p>今日新增
+                  <strong>{{statistic.today.wen_shu}}</strong>
+                  条</p>
+              </span>
+            </li>
+          </ul>
+        </div>
+        <h2 class='total-statistic'>已汇聚全国法院依法公开案例、法规数据共 <strong>119,670</strong> 份，今日新增 <strong>6,805</strong> 份</h2>
+      </div>
+    </div>
+  </section>
+</div>

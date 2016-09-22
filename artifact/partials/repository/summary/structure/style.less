@@ -1,0 +1,90 @@
+#summaryStructure {
+  .tree-nav {
+    padding: 15px;
+    min-height: 500px;
+    position: relative;
+    .metismenu {
+      width: 120px;
+      li {
+        &.active {
+          >a {
+            color: #FFF;
+          }
+        }
+        a {
+          display: inline-block;
+          width: 100%;
+          cursor: pointer;
+        }
+      }
+      >li {
+        ul {
+          position: absolute;
+          left: 100%;
+          top: 0;
+          min-width: 200px;
+          -webkit-box-shadow: 6px 6px 10px rgba(0,0,0,.3);
+          box-shadow: 6px 6px 10px rgba(0,0,0,.3);
+        }
+      }
+    }
+    .total-content {
+      position: absolute;
+      width: 200px;
+      right: 30px;
+      top: 15px;
+      z-index: 99;
+      background: rgb(202, 239, 255);
+      padding: 10px 15px;
+      color: #545454;
+      font-family: '微软雅黑';
+      .total-item {
+        padding: 10px 15px;
+        cursor: pointer;
+        label {
+          font-size: 16px;
+        }
+        number {
+          padding-left: 10px;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+      .close-icon {
+        position: absolute;
+        right: -10px;
+        top: -20px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+    .explain-content {
+      position: absolute;
+      width: 38%;
+      height: 90%;
+      overflow-x:hidden;
+      overflow-y: scroll;
+      right: 30px;
+      top: 15px;
+      z-index: 99;
+      //background: rgb(202, 239, 255);
+      background: url("../assets/images/judgment/paper.png");
+      padding: 10px 15px;
+      color: #545454;
+      font-family: '微软雅黑';
+      .close-icon {
+        position: absolute;
+        right: -10px;
+        top: -20px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      .media-heading {
+        font-weight: 600;
+      }
+      .content {
+        text-indent: 2em;
+      }
+    }
+  }
+}

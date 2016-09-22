@@ -1,0 +1,265 @@
+<div id="judgment-case-list-Editor">
+    <section class='editor'>
+      <div class="left">
+        <button ui-sref='judgment.case_list' class="btn btn-danger btn-xs btn-close">
+          <i class="glyphicon glyphicon-remove"></i>
+        </button>
+        <hr />
+        <div class="menu-tree">
+          <treecontrol class="tree-classic"
+             expanded-nodes="[Editor.treeData[0],Editor.treeData[1], Editor.treeData[2], Editor.treeData[3] ,Editor.treeData[4] ,Editor.treeData[5], Editor.treeData[6]]"
+             tree-model="Editor.treeData"
+             options="Editor.treeOptions"
+             on-selection="showSelected(node)">
+             <a ng-click="Editor.jumpToSection(node.id)">{{node.name}}</a>
+          </treecontrol>
+        </div>
+
+      </div>
+      <div class="center">
+        <div id='judgment' style="text-align: justify">
+          <style>
+            #judgment-head #courtName {
+              text-align: center; line-height: 25pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 22pt;
+            }
+            #judgment-head #lawCaseTitle {
+              text-align: center; line-height: 30pt; margin: 0.5pt 0cm; font-family: 仿宋; font-size: 26pt;
+            }
+            #judgment-head #lawCaseCode {
+              text-align: right; line-height: 30pt; margin: 0.5pt 0cm; font-family: 仿宋; font-size: 16pt;
+            }
+            #judgment-body p {
+              line-height: 25pt; text-align: justify; text-justify: inter-ideograph; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 仿宋; font-size: 16pt;
+            }
+            #judgment-foot p {
+              text-align: right; line-height: 25pt; margin: 0.5pt 72pt 0.5pt 0cm; font-family: 仿宋; font-size: 16pt;
+            }
+          </style>
+          <div id="judgment-head">
+            <p data-placeholder="文书标题-法院名称"
+               id="courtName"
+               ng-model="Editor.template.templateArticle.indexTitle.courtName"
+               medium-editor bind-options="Editor.mediumEditorOptions"></p>
+            <p data-placeholder="文书标题-文书名称"
+               id="lawCaseTitle"
+               ng-model="Editor.template.templateArticle.indexTitle.lawCaseTitle"
+               medium-editor bind-options="Editor.mediumEditorOptions"></p>
+            <p data-placeholder="文书标题-案号"
+               id="lawCaseCode"
+               ng-model="Editor.template.templateArticle.indexTitle.lawCaseCode"
+               medium-editor bind-options="Editor.mediumEditorOptions"></p>
+          </div>
+          <div id="judgment-body">
+            <p data-placeholder="首部-当事人"
+               id="accuser"
+               ng-model="Editor.template.templateArticle.parties.accuser"
+               medium-editor bind-options="Editor.mediumEditorOptions"></p>
+            <p data-placeholder="首部-当事人"
+               id="accuserAgent"
+               ng-model="Editor.template.templateArticle.parties.accuserAgent"
+               medium-editor bind-options="Editor.mediumEditorOptions"></p>
+            <p data-placeholder="首部-当事人"
+               id="defendant"
+               ng-model="Editor.template.templateArticle.parties.defendant"
+               medium-editor bind-options="Editor.mediumEditorOptions"></p>
+            <p data-placeholder="首部-当事人"
+               id="defendantAgent"
+               ng-model="Editor.template.templateArticle.parties.defendantAgent"
+               medium-editor bind-options="Editor.mediumEditorOptions"></p>
+            <p data-placeholder="首部-案件由来和审理经过"
+               id="caseGeneral"
+               ng-model="Editor.template.templateArticle.parties.caseGeneral"
+               medium-editor bind-options="Editor.mediumEditorOptions"></p>
+            <p data-placeholder="事实-诉讼请求"
+               id="claims"
+               ng-model="Editor.template.templateArticle.fact.claims"
+               medium-editor bind-options="Editor.mediumEditorOptions"></p>
+            <p data-placeholder="事实-证据"
+               id="argued"
+               ng-model="Editor.template.templateArticle.fact.argued"
+               medium-editor bind-options="Editor.mediumEditorOptions"></p>
+            <p data-placeholder="事实-事实"
+               id="factResult"
+               ng-click = "Editor.openStatus.isFactResult = !Editor.openStatus.isFactResult"
+               ng-dblclick = "Editor.matchFactResult(
+                    Editor.template.templateArticle.parties.caseGeneral
+                  + Editor.template.templateArticle.fact.claims
+                  + Editor.template.templateArticle.fact.argued
+                  + Editor.template.templateArticle.fact.factResult,
+                  'factResult')"
+               ng-model="Editor.template.templateArticle.fact.factResult"
+               medium-editor bind-options="Editor.mediumEditorOptions"></p>
+            <p data-placeholder="理由"
+               id="reason"
+               ng-click = "Editor.openStatus.isReason = !Editor.openStatus.isReason"
+               ng-model="Editor.template.templateArticle.reason"
+               medium-editor bind-options="Editor.mediumEditorOptions"></p>
+            <p data-placeholder="裁判主文"
+               id="caseMain"
+               ng-click = "Editor.openStatus.isCaseMain = !Editor.openStatus.isCaseMain"
+               ng-dblclick = "Editor.matchCaseMain(
+                     Editor.template.templateArticle.parties.caseGeneral
+                   + Editor.template.templateArticle.fact.claims
+                   + Editor.template.templateArticle.fact.argued
+                   + Editor.template.templateArticle.fact.factResult
+                   + Editor.template.templateArticle.reason
+                   + Editor.template.templateArticle.caseMain,
+                 'caseMain')"
+               ng-model="Editor.template.templateArticle.caseMain"
+               medium-editor bind-options="Editor.mediumEditorOptions"></p>
+            <p data-placeholder="尾部-诉讼费用负担"
+               id="legalCosts"
+               ng-model="Editor.template.templateArticle.bottom.legalCosts"
+               medium-editor bind-options="Editor.mediumEditorOptions"></p>
+            <p data-placeholder="尾部-告知事项"
+               id="informInfo"
+               ng-model="Editor.template.templateArticle.bottom.informInfo"
+               medium-editor bind-options="Editor.mediumEditorOptions"></p>
+          </div>
+          <div id="judgment-foot">
+            <p data-placeholder="落款-署名"
+               id="chiefJudge"
+               ng-model="Editor.template.templateArticle.inscribe.chiefJudge"
+               medium-editor bind-options="Editor.mediumEditorOptions"></p>
+            <p data-placeholder="事实-证据"
+               id="judge"
+               ng-model="Editor.template.templateArticle.inscribe.judge"
+               medium-editor bind-options="Editor.mediumEditorOptions"></p>
+            <p data-placeholder="事实-证据"
+               id="courtClerk"
+               ng-model="Editor.template.templateArticle.inscribe.courtClerk"
+               medium-editor bind-options="Editor.mediumEditorOptions"></p>
+            <p data-placeholder="落款-日期"
+               id="judgmentDate"
+               ng-model="Editor.template.templateArticle.inscribe.judgmentDate"
+               medium-editor bind-options="Editor.mediumEditorOptions"></p>
+          </div>
+        </div>
+      </div>
+      <menu class="right">
+        <div class="btn-group">
+          <button class="btn btn-default btn-sm" ng-click='Editor.saveJudgment()'>
+            <i class="fa fa-floppy-o">&nbsp;保存</i>
+          </button>
+          <button class="btn btn-default btn-sm">
+            <i class="fa fa-eye">&nbsp;预览</i>
+          </button>
+          <button class="btn btn-default btn-sm" ng-click='Editor.exportWORD()'>
+            <i class="fa fa-file-word-o">&nbsp;导出</i>
+          </button>
+          <div class="btn-group">
+            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-history">&nbsp;历史</i>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <div class="list-group">
+                <a class="list-group-item">第1次修改</a>
+                <a class="list-group-item">第2次修改</a>
+                <a class="list-group-item">第3次修改</a>
+                <a class="list-group-item">第4次修改</a>
+              </div>
+            </ul>
+          </div>
+
+        </div>
+        <uib-accordion close-others=true>
+          <div heading='案件信息' uib-accordion-group class="panel-default" is-open=true>
+            <div class="list-group">
+              <a class="list-group-item">案件名称：{{Editor.targetJudgment.lawCaseTitle}}</a>
+              <a class="list-group-item">审理程序：{{Editor.targetJudgment.targetJudgment}}</a>
+              <a class="list-group-item">案件类型：{{Editor.targetJudgment.category}}</a>
+              <a class="list-group-item">案由：{{Editor.targetJudgment.causeOfAction}}</a>
+              <a class="list-group-item">受理日期：{{Editor.targetJudgment.acceptedDate}}</a>
+            </div>
+          </div>
+          <div heading='推荐文书 - (经审理查明)' uib-accordion-group class="panel-default" is-open="Editor.openStatus.isFactResult">
+            <ul class="list-group">
+              <a class="list-group-item"
+                 ng-repeat='proposal in Editor.proposalsFactResult'
+                 ng-click = "Editor.selectFactResult(proposal.templateArticle)">
+                <span class="badge">{{proposal.similarity}}</span>
+                （{{$index+1}}）{{proposal.templateArticle|limitTo:30}}
+              </a>
+            </ul>
+            <div class="content" ng-click='Editor.transferFactResult(Editor.selectedFactResult)'>
+              {{Editor.selectedFactResult}}
+            </div>
+          </div>
+          <div heading='推荐文书 - (本院认为)' uib-accordion-group class="panel-default" is-open="Editor.openStatus.isReason">
+            <treecontrol class="tree-light"
+               tree-model="Editor.reasonTree"
+               options="Editor.reasonTreeOptions"
+               on-selection="showSelected(node)">
+               <span ng-click='Editor.selectReason(node.conditonExplain)'>{{node.conditionName}}</span>
+            </treecontrol>
+            <div class="content" ng-click='Editor.transferReason(Editor.selectedReason)'>
+              {{Editor.selectedReason}}
+            </div>
+          </div>
+          <div heading='推荐文书 - (裁判主文内容)' uib-accordion-group class="panel-default" is-open="Editor.openStatus.isCaseMain">
+            <ul class="list-group">
+              <a class="list-group-item"
+                 ng-repeat='proposal in Editor.proposalsCaseMain'
+                 ng-click = "Editor.selectCaseMain(proposal.templateArticle)">
+                <span class="badge">{{proposal.similarity}}</span>
+                （{{$index+1}}）{{proposal.templateArticle|limitTo:30}}
+              </a>
+            </ul>
+            <div class="content" ng-click='Editor.transferCaseMain(Editor.selectedCaseMain)'>
+              {{Editor.selectedCaseMain}}
+            </div>
+          </div>
+          <div ng-class='similarCases' heading='相似案例' uib-accordion-group class="panel-default" is-open=true>
+            <ul class="list-group">
+              <a class="list-group-item"
+                 ng-repeat='similarCase in Editor.similarCases'
+                 ng-click = "Editor.selectSimilarCase(similarCase)">
+                <span class="badge">{{similarCase.similarity}}</span>
+                （{{$index+1}}）{{similarCase.caseTitle}} ({{similarCase.judgeDate}})
+              </a>
+            </ul>
+            <div class="content">
+              {{Editor.selectedSimilarCase.orgText}}
+            </div>
+          </div>
+          <div ng-class='lawitem' heading='关联法条' uib-accordion-group class="panel-default" is-open=true>
+            <uib-tabset active="activePill" vertical="true" type="pills">
+              <uib-tab index="$index"
+              ng-repeat='lawItem in Editor.lawItems'
+              heading="{{lawItem.case_accord | limitTo:30 }}">
+              <div class="content">
+                {{lawItem.case_accord}}
+              </div>
+            </uib-tab>
+            </uib-tabset>
+          </div>
+          <div heading='案件材料' uib-accordion-group class="panel-default" is-open=true>
+            <uib-tabset active="activeJustified" justified="true">
+              <uib-tab index="0" heading="起诉书">
+                <div class="material"><img src="assets/images/demo/material-1.jpg"></div>
+              </uib-tab>
+              <uib-tab index="1" heading="原告身份证明">
+                <div class="material"><img src="assets/images/demo/material-2.jpg"></div>
+              </uib-tab>
+              <uib-tab index="3" heading="委托代理人证明">
+                <div class="material"><img src="assets/images/demo/material-3.jpg"></div>
+              </uib-tab>
+              <uib-tab index="4" heading="起诉事项证明材料">
+                <div class="material"><img src="assets/images/demo/material-4.jpg"></div>
+              </uib-tab>
+              <uib-tab index="5" heading="证据材料">
+                <div class="material"><img src="assets/images/demo/material-5.jpg"></div>
+              </uib-tab>
+            </uib-tabset>
+          </div>
+        </uib-accordion>
+      </menu>
+    </section>
+    <!--
+    <aside class="bottom">
+      bottom
+    </aside>
+    -->
+  </div>
+</div>

@@ -1,0 +1,75 @@
+#login-page {
+  .login-header {
+    background: #34475f;
+    height: 220px;
+  }
+  .login-box {
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+    top: -180px;
+    .input-sm {
+      height: 30px;
+    }
+    h3 {
+      text-align: center;
+      color: @white;
+      line-height: 53px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      .court-logo {
+        display: inline-block;
+        width: 56px;
+        height: 60px;
+        background: url("../assets/images/login/court.png") no-repeat;
+        background-size: 100%;
+        vertical-align: bottom;
+      }
+    }
+    .tab-content {
+      box-shadow: 0 4px 24px rgba(0,0,0,.3);
+      #login-content,#regist-content {
+        background: @white;
+        padding: 24px 0;
+        .form-login {
+          padding: 15px 0;
+          .checkbox{
+            >label{
+                color:@font-label;
+            }
+          }
+          .forget {
+            color: @orange !important;
+          }
+        }
+        .login-img {
+          background: url("../assets/images/login/login.png") no-repeat center center;
+          height: 160px;
+          position: relative;
+          left: 38px;
+        }
+        .regist-img{
+          background: url("../assets/images/login/regist.png") no-repeat center center;
+          height: 160px;
+          position: relative;
+          left: 38px;
+        }
+        .btn-login {
+          width: 46%;
+          background: @login-btn;
+          color: @white;
+        }
+        .btn-regist{
+          width:30%;
+          background: @login-btn;
+          color: @white;
+        }
+        .go-login{
+          display:inline-block;
+          padding:0 15px;
+        }
+      }
+    }
+    #regist-content {}
+  }
+}

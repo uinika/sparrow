@@ -1,0 +1,72 @@
+<div id="summaryStructure">
+  <section class='wiserv-ui'>
+    <div class="panel panel-primary patch">
+      <div class="panel-heading"></div>
+      <div class="panel-body">
+        <div class='tree-nav'>
+          <ul class="metismenu list-group" id="summaryStructureMenu" wiserv-summary-structure>
+
+            <li ui-sref-active="active" class=" list-group-item" ng-repeat='item in data'>
+              <a aria-expanded="true">
+                <span class="sidebar-nav-item">{{item.caseBriefName}}</span>
+                <span class="fa arrow"></span>
+              </a>
+              <ul aria-expanded="false" class=" list-group">
+                <li ui-sref-active="active" class=" list-group-item" ng-repeat='item1 in item.childNode'>
+                  <a aria-expanded="true">
+                    <span>{{item1.caseBriefName}}</span>
+                    <span class="fa arrow"></span>
+                  </a>
+                  <ul aria-expanded="false" class=" list-group">
+                    <li ui-sref-active="active" class=" list-group-item" ng-repeat='item2 in item1.childNode'>
+                      <a aria-expanded="false">
+                        <span>{{item2.caseBriefName}}</span>
+                        <span class="fa arrow"></span>
+                      </a>
+                      <ul aria-expanded="false" class=" list-group">
+                        <li ui-sref-active="active" class=" list-group-item" ng-repeat='item3 in item2.childNode'>
+                          <a aria-expanded="false" data-name={{item3.caseBriefName}} ng-click='summaryStructure.getNumber($event)'>
+                            {{item3.caseBriefName}}
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class='total-content' ng-show='summaryStructure.showTotal'>
+            <span class='close-icon' ng-click='summaryStructure.showTotal = false'>&times;</span>
+            <h4>{{summaryStructure.name}}</h4>
+            <div class="total-item" ng-click='summaryStructure.detail($event)'>
+              <label>解释</label>
+              <number>{{summaryStructure.total.jieshi}}</number>
+            </div>
+            <div class="total-item" ui-sref='repository.summaryRule({caseBrief:summaryStructure.name})'>
+              <label>法规</label>
+              <number>{{summaryStructure.total.fagui}}</number>
+            </div>
+            <div class="total-item">
+              <label>案例</label>
+              <number>{{summaryStructure.total.anli}}</number>
+            </div>
+          </div>
+
+          <div class='explain-content' ng-show='summaryStructure.showExplain'>
+            <span class='close-icon' ng-click='summaryStructure.showExplain = false'>&times;</span>
+            <h3>{{summaryStructure.name}}</h3>
+            <div class="media" ng-repeat='(key,value) in summaryStructure.explain'>
+              <div class="media-body">
+                <h4 class="media-heading">{{key}}</h4>
+                <div class='content'>{{value}}</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

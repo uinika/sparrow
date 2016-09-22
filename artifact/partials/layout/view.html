@@ -1,0 +1,141 @@
+<div id='layout'>
+  <section id="sidebar" class='sidr left'>
+    <ul class='menu'>
+      <div class="placeholder"></div>
+      <li ui-sref-active="active">
+        <a ui-sref="dashboard">
+          <span class="glyphicon glyphicon-th">&nbsp;系统概览</span>
+          <span class="name"></span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a aria-expanded="true">
+          <span class="glyphicon glyphicon-grain">&nbsp;裁判文书</span>
+          <span class="glyphicon arrow"></span>
+        </a>
+        <ul aria-expanded="true">
+          <li ui-sref-active="active">
+            <a ui-sref="judgment.case_list">
+              <span class="glyphicon glyphicon-grain">&nbsp;案件信息列表</span>
+            </a>
+          </li>
+          <li ui-sref-active="active">
+            <a ui-sref="judgment.doc_list">
+              <span class="glyphicon glyphicon-grain">&nbsp;裁判文书列表</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li ui-sref-active="active">
+        <a>
+          <span class="glyphicon glyphicon-grain">&nbsp;知识库</span>
+          <span class="glyphicon arrow"></span>
+        </a>
+        <ul aria-expanded="true">
+          <li ui-sref-active="active">
+            <a ui-sref="repository.repositoryStatistic">
+              <span class="glyphicon glyphicon-grain">&nbsp;统计</span>
+            </a>
+          </li>
+          <li ui-sref-active="active">
+            <a ui-sref="repository.repositorySearch">
+              <span class="glyphicon glyphicon-grain">&nbsp;裁判文书</span>
+            </a>
+          </li>
+          <li ui-sref-active="active">
+            <a ui-sref="repository.repositoryLaws">
+              <span class="glyphicon glyphicon-grain">&nbsp;法条库</span>
+            </a>
+            <ul aria-expanded="true">
+              <li ui-sref-active="active">
+                <a ui-sref="repository.lawsStructure">
+                  <span class="glyphicon glyphicon-grain">&nbsp;结构</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li ui-sref-active="active">
+            <a ui-sref="repository.repositorySummary">
+              <span class="glyphicon glyphicon-grain">&nbsp;案由库</span>
+            </a>
+            <ul aria-expanded="true">
+              <li ui-sref-active="active">
+                <a ui-sref="repository.summaryStructure">
+                  <span class="glyphicon glyphicon-grain">&nbsp;结构</span>
+                </a>
+              </li>
+              <!-- <li ui-sref-active="active">
+                <a ui-sref="repository.summaryExplain">
+                  <span class="glyphicon glyphicon-grain">&nbsp;解释</span>
+                </a>
+              </li>
+              <li ui-sref-active="active">
+                <a ui-sref="repository.summaryRule">
+                  <span class="glyphicon glyphicon-grain">&nbsp;法规</span>
+                </a>
+              </li> -->
+            </ul>
+          </li>
+          <li ui-sref-active="active">
+            <a ui-sref="repository.judgementLib">
+              <span class="glyphicon glyphicon-grain">&nbsp;裁判文书库</span>
+            </a>
+            <ul aria-expanded="true">
+              <li ui-sref-active="active">
+                <a ui-sref="repository.judgementLibSearch">
+                  <span class="glyphicon glyphicon-grain">&nbsp;分类</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section id='content-main'>
+    <section id='navigator'>
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-header">
+          <a class="navbar-brand logo" wiserv-sidebar>
+            <span class="image"></span>
+            <span class="text">法官判案智能辅助系统</span>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-left"></ul>
+          <ul class="admin nav navbar-nav navbar-right">
+            <li class="dropdown" uib-dropdown dropdown-append-to-body>
+              <a uib-dropdown-toggle class="dropdown-toggle">
+                <span class="glyphicon glyphicon-user">&nbsp;系统管理员</span>
+                <span class="caret"></span>
+              </a>
+              <ul uib-dropdown-menu class="dropdown-menu patch">
+                <li>
+                  <a href="#">用户详情</a>
+                </li>
+                <li>
+                  <a href="#">用户管理</a>
+                </li>
+                <li>
+                  <a href="#">修改密码</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a ng-click='layout.logout()'>
+                    <span class="glyphicon glyphicon-log-out">&nbsp;退出</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </section>
+    <section id="content" ui-view></section>
+    <!--
+    Main Content
+    -->
+  </section>
+
+</div>

@@ -1,0 +1,56 @@
+<div id="summaryExplain">
+  <section class='wiserv-ui'>
+    <div class="panel panel-primary patch">
+      <div class="panel-heading"></div>
+      <div class="panel-body">
+        <div class='tree-nav'>
+          <ul class="metismenu list-group" id="summaryExplainMenu" wiserv-summary-explain>
+            <li ui-sref-active="active" class=" list-group-item" ng-repeat='item in data'>
+                <a  aria-expanded="true" >
+                  <span class="sidebar-nav-item">{{item.caseBriefName}}</span>
+                  <span class="fa arrow"></span>
+                </a>
+                <ul aria-expanded="false" class=" list-group">
+                  <li ui-sref-active="active" class=" list-group-item" ng-repeat='item1 in item.childNode'>
+                    <a aria-expanded="true" >
+                      <span>{{item1.caseBriefName}}</span>
+                      <span class="fa arrow"></span>
+                    </a>
+                    <ul aria-expanded="false" class=" list-group">
+                      <li ui-sref-active="active" class=" list-group-item" ng-repeat='item2 in item1.childNode'>
+                        <a aria-expanded="false">
+                          <span>{{item2.caseBriefName}}</span>
+                          <span class="fa arrow"></span>
+                        </a>
+                        <ul aria-expanded="false" class=" list-group">
+                          <li ui-sref-active="active" class=" list-group-item" ng-repeat='item3 in item2.childNode'>
+                            <div>
+                            <a aria-expanded="false" data-name='{{item3.caseBriefName}}'  ng-click='summaryExplain.detail($event)'>
+                              {{item3.caseBriefName}}
+                              <span class="fa arrow"></span>
+                            </a>
+                          </div>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+            </li>
+          </ul>
+
+          <div class='explain-content' ng-show='summaryExplain.showExplain'>
+            <span class='close-icon' ng-click='summaryExplain.showExplain = false'>&times;</span>
+            <h3>{{summaryExplain.name}}</h3>
+            <div class="media" ng-repeat='(key,value) in summaryExplain.data'>
+              <div class="media-body">
+                <h4 class="media-heading">{{key}}</h4>
+                <div class='content'>{{value}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

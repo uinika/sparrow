@@ -1,0 +1,11 @@
+# Node modules' directory
+node_modules
+
+# Log for npm debugging
+npm-debug.log
+
+# Source code with compiled
+release
+
+# Concat files
+artifact/bundles

@@ -1,0 +1,44 @@
+<div id="judgment-case-list">
+  <div class="wiserv-ui">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <div class="input-group name">
+          <input placeholder='查询案件名称' type="text" class="form-control">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search">&nbsp;查询</span></button>
+          </span>
+        </div>
+        <div class="input-group date">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-primary" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+          <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder="查询日期"/>
+
+        </div>
+
+      </div>
+      <div class="panel-body wiserv-ui">
+        <ul class="list-group" ng-repeat='item in CaseList.list'>
+          <li class="list-group-item list-group-item-info">
+            <span class="badge">{{item.category}}</span>
+            <span class="glyphicon glyphicon-book">&nbsp;</span>
+            <span class="title">{{item.lawCaseTitle}}</span>
+            <span class="button text-primary" ng-click='CaseList.storage(item)' ui-sref='judgment.editor'>生成裁判文书</span>
+          </li>
+          <li class="list-group-item">
+            <span>原告：{{item.accuserName}}</span>
+            <span>原告委托代理人：{{item.accuserAgentName}}</span>
+            <span>被告：{{item.defendantName}}</span>
+            <span>被告委托代理人：{{item.defendantAgentName}}</span>
+          </li>
+          <li class='list-group-item'>
+            诉求：{{item.claims}}
+          </li>
+        </ul>
+
+      </div>
+      <ul class='pull-right' uib-pagination total-items=36 ng-model="test" ng-change=""></ul>
+    </div>
+  </div>
+
+</div>
