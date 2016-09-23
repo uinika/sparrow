@@ -7,6 +7,7 @@ const Express = require('express'),
 
 /** Middleware */
 App.use('/wiserv', Express.static('./artifact'));
+App.use('/release', Express.static('./release'));
 App.use(Cors({
   origin: 'http://localhost:5001',
   methods: 'GET, POST, PUT, DELETE, OPTIONS',
@@ -20,7 +21,7 @@ App.use('/', (request, response, next) => {
   next();
 });
 App.listen(5002);
-console.info(Color.yellow('Mock started on http://localhost:5002/wiserv'));
+console.info(Color.yellow('Mock started on http://localhost:5002/wiserv || release'));
 
 /** Basic config for express */
 App.use('/', require('./login/api'));

@@ -22,8 +22,7 @@ Gulp.task('express', () => {
 /** gulp reload*/
 Gulp.task('default', ['express'], () => {
   const target = [
-    './artifact/index.html',
-    './artifact/partials/**/*'
+    './artifact/**.*'
   ];
   Connect.server({
     root: 'artifact',
