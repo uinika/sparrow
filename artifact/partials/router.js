@@ -1,15 +1,17 @@
 define(
-  ['Text!partials/login/view.html', 'Text!partials/login/style.less'],
-  function(html, css) {
-    console.log(html);
-    console.info(css);
+  ['partials/login/script.main'],
+  function(loginView) {
     var Router = Backbone.Router.extend({
       routes: {
         '': 'login',
-        'login': 'login'
+        'login': 'login',
+        'dashboard': 'dashboard'
       },
-      login: function(actions) {
-
+      login: function() {
+        new loginView().render();
+      },
+      dashboard: function() {
+        console.log('dashboard');
       }
     })
     return Router;
