@@ -31,12 +31,20 @@ Gulp.task('default', ['pack'], () => {
 Gulp.task('pack', () => {
   const server = './mock/server.js';
   const source = './artifact/partials/';
-  const target = './artifact/bundles';
+  const target = './artifact/';
   Nodemon({
     script: server,
     execMap: {js: 'node --harmony'},
     env: {'NODE_ENV': 'development'}
   });
+  const combine = () => {
+    Gulp.src([source + '**/*.less'])
+      .pipe(Concat('index.css'))
+      .pipe(Less())
+      .pipe(Gulp.dest(target));
+  };
+  combine();
+  Gulp.watch([source + '**/*.less', source + 'app.js', source + '**/*.js'], combine);
 });
 
 /** gulp core */
