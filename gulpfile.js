@@ -10,23 +10,15 @@ const Gulp = require("gulp"),
       Delete = require('del');
 
 /** gulp */
-Gulp.task('express', () => {
-  const server = './mock/server.js';
-  Nodemon({
-    script: server,
-    execMap: {js: 'node --harmony'},
-    env: {'NODE_ENV': 'development'}
-  });
-});
-
-/** gulp reload*/
-Gulp.task('default', ['express'], () => {
+Gulp.task('default', ['pack'], () => {
   const target = [
-    './artifact/**.*'
+    './artifact/index.html',
+    './artifact/partials/**/*.html',
+    './artifact/bundles/**/*'
   ];
   Connect.server({
     root: 'artifact',
-    port: 5001,
+    port: 5002,
     livereload: true
   });
   Gulp.watch(target, () => {
@@ -34,6 +26,26 @@ Gulp.task('default', ['express'], () => {
       .pipe(Connect.reload());
   });
 });
+
+/** gulp pack */
+Gulp.task('pack', () => {
+  const server = './mock/server.js';
+  const source = './artifact/partials/';
+  const target = './artifact/bundles';
+  Nodemon({
+    script: server,
+    execMap: {js: 'node --harmony'},
+    env: {'NODE_ENV': 'development'}
+  });
+});
+
+/** gulp core */
+Gulp.task('core', () => {
+  Gulp.src(['./artifact/libraries/core/*.js'])
+    .pipe(Concat('core.js'))
+    .pipe(UglifyJS())
+    .pipe(Gulp.dest('./artifact/libraries'));
+})
 
 /** gulp build */
 Gulp.task('build', () => {
