@@ -14,7 +14,7 @@ exports.json = name => {
 };
 
 /** Protocal between server & client */
-exports.protocal = (head, body) => {
+exports.protocol = (head, body) => {
   head = head || {};
   body = body || {};
   return {

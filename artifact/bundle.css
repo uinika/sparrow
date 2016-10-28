@@ -1,98 +1,3 @@
-html,
-body,
-#main {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  border: none;
-}
-body {
-  background-color: #FAFAFA;
-  background-size: cover;
-}
-/** Fill parent container */
-.fill {
-  width: 100%;
-  height: 100%;
-}
-/** Clean margin & padding */
-.clean {
-  margin: 0;
-  padding: 0;
-}
-/** Patch bootstrap */
-.wiserv-ui > .panel {
-  border: none;
-  margin: 0;
-}
-.wiserv-ui > .panel .panel-heading {
-  padding: 0;
-  height: 40px;
-  background: #333333;
-  border: none;
-}
-.wiserv-ui > .panel .panel-heading .input-group .form-control {
-  border: none;
-  font-size: 12px;
-  color: #323232;
-}
-.wiserv-ui > .panel .panel-heading .btn {
-  border: none;
-  font-size: 12px;
-  padding: 12px 15px 11px 20px;
-  margin-left: 0px !important;
-  background: rgba(0, 0, 0, 0.1);
-}
-.wiserv-ui > .panel .panel-body {
-  padding: 0;
-}
-.wiserv-ui > .divider {
-  margin: 0;
-}
-.wiserv-ui > .list-group {
-  margin: 0;
-}
-.wiserv-ui > .list-group .title {
-  font-weight: bold;
-  color: #222222;
-}
-.wiserv-ui > .list-group .button {
-  background: rgba(0, 0, 0, 0.04);
-  padding: 10px 12px;
-  margin-left: 15px;
-}
-.wiserv-ui > .list-group .button:hover {
-  background: rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-}
-.wiserv-ui > .list-group .button:active {
-  background: rgba(0, 0, 0, 0.2);
-  border-left: 1px solid #E7E7E7;
-  border-right: 1px solid #E7E7E7;
-  cursor: pointer;
-}
-.wiserv-ui > .list-group .list-group-item:nth-child(1) {
-  border-top: 0;
-}
-.wiserv-ui > .table {
-  margin: 0;
-}
-.wiserv-ui > .table th {
-  border-bottom: 1px;
-}
-.wiserv-ui > .modal-dialog {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-.wiserv-ui > .modal-dialog .modal-content {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
 #dashboard {
   background: #eff3f6;
 }
@@ -274,6 +179,101 @@ body {
 #dashboard footer {
   height: 100px;
   background: #33475f;
+}
+html,
+body,
+#main {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+body {
+  background-color: #FAFAFA;
+  background-size: cover;
+}
+/** Fill parent container */
+.fill {
+  width: 100%;
+  height: 100%;
+}
+/** Clean margin & padding */
+.clean {
+  margin: 0;
+  padding: 0;
+}
+/** Patch bootstrap */
+.wiserv-ui > .panel {
+  border: none;
+  margin: 0;
+}
+.wiserv-ui > .panel .panel-heading {
+  padding: 0;
+  height: 40px;
+  background: #333333;
+  border: none;
+}
+.wiserv-ui > .panel .panel-heading .input-group .form-control {
+  border: none;
+  font-size: 12px;
+  color: #323232;
+}
+.wiserv-ui > .panel .panel-heading .btn {
+  border: none;
+  font-size: 12px;
+  padding: 12px 15px 11px 20px;
+  margin-left: 0px !important;
+  background: rgba(0, 0, 0, 0.1);
+}
+.wiserv-ui > .panel .panel-body {
+  padding: 0;
+}
+.wiserv-ui > .divider {
+  margin: 0;
+}
+.wiserv-ui > .list-group {
+  margin: 0;
+}
+.wiserv-ui > .list-group .title {
+  font-weight: bold;
+  color: #222222;
+}
+.wiserv-ui > .list-group .button {
+  background: rgba(0, 0, 0, 0.04);
+  padding: 10px 12px;
+  margin-left: 15px;
+}
+.wiserv-ui > .list-group .button:hover {
+  background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.wiserv-ui > .list-group .button:active {
+  background: rgba(0, 0, 0, 0.2);
+  border-left: 1px solid #E7E7E7;
+  border-right: 1px solid #E7E7E7;
+  cursor: pointer;
+}
+.wiserv-ui > .list-group .list-group-item:nth-child(1) {
+  border-top: 0;
+}
+.wiserv-ui > .table {
+  margin: 0;
+}
+.wiserv-ui > .table th {
+  border-bottom: 1px;
+}
+.wiserv-ui > .modal-dialog {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.wiserv-ui > .modal-dialog .modal-content {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 #layout {
   width: 100%;
