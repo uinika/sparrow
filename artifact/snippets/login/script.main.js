@@ -1,5 +1,5 @@
 define(
-  ['Text!partials/login/view.html', 'Text!partials/login/style.less'],
+  ['Text!snippets/login/view.html', 'Text!snippets/login/style.less'],
   function(html, css){
     return Backbone.View.extend({
       id: 'hank',

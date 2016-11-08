@@ -7,13 +7,14 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'/>
     <link rel='icon' href='assets/favicon.ico' type='image/png'/>
     <link href='libraries/bootstrap/css/bootstrap.min.css' rel='stylesheet'/>
-    <link href='index.css' rel='stylesheet'/>
+    <link href='bundle.css' rel='stylesheet'/>
   </head>
   <body>
     <div id='app'></div>
     <script src='libraries/core/jquery.js'></script>
     <script src='libraries/core/lodash.js'></script>
     <script src='libraries/core/backbone.js'></script>
-    <script data-main='index' src='libraries/core/require.js' async='true' defer></script>
+    <script src='libraries/core/backbone.marionette.js'></script>
+    <script data-main='app' src='libraries/core/require.js' async='true' defer></script>
   </body>
 </html>

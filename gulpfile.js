@@ -1,24 +1,44 @@
 const Gulp = require("gulp"),
-      Connect = require('gulp-connect'),
-      Nodemon = require('gulp-nodemon'),
-      Less = require('gulp-less'),
-      Concat = require('gulp-concat'),
-      UglifyJS = require('gulp-uglify'),
-      MinifyCSS = require('gulp-clean-css'),
-      MinHtml = require('gulp-htmlmin'),
-      Replace = require('gulp-replace'),
-      Delete = require('del');
+      Connect = require("gulp-connect"),
+      Nodemon = require("gulp-nodemon"),
+      Less = require("gulp-less"),
+      Concat = require("gulp-concat"),
+      UglifyJS = require("gulp-uglify"),
+      MinifyCSS = require("gulp-clean-css"),
+      MinHtml = require("gulp-htmlmin"),
+      Replace = require("gulp-replace"),
+      Compress = require("gulp-zip"),
+      Moment = require("moment"),
+      Delete = require("del");
 
 /** gulp */
-Gulp.task('default', ['pack'], () => {
+Gulp.task("pack", () => {
+  const server = "./mock/server.js";
+  const source = "./artifact/snippets/";
+  const target = "./artifact/";
+  Nodemon({
+    script: server,
+    execMap: {js: "node --harmony"},
+    env: {"NODE_ENV": "development"}
+  });
+  const combine = () => {
+    Gulp.src([source + "**/*.less"])
+      .pipe(Concat("bundle.css"))
+      .pipe(Less())
+      .pipe(Gulp.dest(target));
+  };
+  combine();
+  Gulp.watch([source + "**/*.less"], combine);
+});
+
+/** gulp reload*/
+Gulp.task("default", ["pack"], () => {
   const target = [
-    './artifact/index.html',
-    './artifact/components/**/*.html',
-    './artifact/bundles/**/*'
+    "./artifact/**/*.*"
   ];
   Connect.server({
-    root: 'artifact',
-    port: 5002,
+    root: "artifact",
+    port: 5003,
     livereload: true
   });
   Gulp.watch(target, () => {
@@ -27,69 +47,50 @@ Gulp.task('default', ['pack'], () => {
   });
 });
 
-/** gulp pack */
-Gulp.task('pack', () => {
-  const server = './mock/server.js';
-  const source = './artifact/components/';
-  const target = './artifact/';
-  Nodemon({
-    script: server,
-    execMap: {js: 'node --harmony'},
-    env: {'NODE_ENV': 'development'}
-  });
-  const combine = () => {
-    Gulp.src([source + '**/*.less'])
-      .pipe(Concat('index.css'))
-      .pipe(Less())
-      .pipe(Gulp.dest(target));
-  };
-  combine();
-  Gulp.watch([source + '**/*.less', source + 'app.js', source + '**/*.js'], combine);
-});
-
-/** gulp core */
-Gulp.task('core', () => {
-  Gulp.src(['./artifact/libraries/core/*.js'])
-    .pipe(Concat('core.js'))
-    .pipe(UglifyJS())
-    .pipe(Gulp.dest('./artifact/libraries'));
-})
-
 /** gulp build */
-Gulp.task('build', () => {
-  const source = './artifact/';
-  const target = './release/';
+Gulp.task("build", () => {
+  const source = "./artifact/";
+  const target = "./build/";
   // html
-  Gulp.src([source + 'components/**/*.html'])
+  Gulp.src([source + "snippets/**/*.html"])
     .pipe(MinHtml({collapseWhitespace: true}))
-    .pipe(Gulp.dest(target + '/components'));
+    .pipe(Gulp.dest(target + "/snippets"));
   // update index.html /<!--Start-->[\s\S]*<!--End-->/g
-  Gulp.src([source + 'index.html'])
-    .pipe(Replace('bundles/scripts', 'bundles/scripts.min'))
-    .pipe(Replace('bundles/styles', 'bundles/styles.min'))
+  Gulp.src([source + "index.html"])
+    .pipe(Replace("bundles/scripts", "bundles/scripts.min"))
+    .pipe(Replace("bundles/styles", "bundles/styles.min"))
     .pipe(Gulp.dest(target));
   // css
-  Gulp.src([source + 'components/**/*.less'])
-    .pipe(Concat('styles.min.css'))
+  Gulp.src([source + "snippets/**/*.less"])
+    .pipe(Concat("styles.min.css"))
     .pipe(Less())
-    .pipe(MinifyCSS({compatibility: 'ie8'}))
-    .pipe(Gulp.dest(target + 'bundles'));
+    .pipe(MinifyCSS({compatibility: "ie8"}))
+    .pipe(Gulp.dest(target + "bundles"));
   // javascript
-  Gulp.src([source + 'components/**/*.js', source + 'app.js'])
-    .pipe(Concat('scripts.min.js'))
+  Gulp.src([source + "snippets/**/*.js", source + "app.js"])
+    .pipe(Concat("scripts.min.js"))
     .pipe(UglifyJS())
-    .pipe(Gulp.dest(target + 'bundles'));
+    .pipe(Gulp.dest(target + "bundles"));
   // image & fonts
-  Gulp.src([source + 'assets/**/*'])
-    .pipe(Gulp.dest(target + 'assets'));
+  Gulp.src([source + "assets/**/*"])
+    .pipe(Gulp.dest(target + "assets"));
   // library
-  Gulp.src([source + 'libraries/**/*'])
-    .pipe(Gulp.dest(target + '/libraries'));
+  Gulp.src([source + "libraries/**/*"])
+    .pipe(Gulp.dest(target + "/libraries"));
+});
+
+/** gulp release */
+Gulp.task("release", ["build"], () => {
+  let releaseTime = Moment().format("YYYY.MM.DD HH:mm:ss");
+  let releaseName = "release " + releaseTime + ".zip";
+  return Gulp.src("./build/**/*")
+    .pipe(Compress(releaseName))
+    .pipe(Gulp.dest("./release"));
 });
 
 /** gulp clean */
-Gulp.task('clean', () => {
+Gulp.task("clean", () => {
   Delete([
-    './release/**/*'
+    "./release/**/*", "./build/**/*"
   ]);
 });

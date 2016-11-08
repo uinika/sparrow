@@ -1,5 +1,5 @@
 define(
-  ['partials/login/script.main'],
+  ['snippets/login/script.main'],
   function(loginView) {
     var Router = Backbone.Router.extend({
       routes: {

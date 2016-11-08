@@ -1,7 +1,7 @@
 {
-  "name": "hummingbird",
-  "version": "1.1.0",
-  "description": "A Template Project for Traditional Front-end.",
+  "name": "sparrow",
+  "version": "1.0.0",
+  "description": "A Backbone Project.",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -14,6 +14,7 @@
     "cors": "^2.7.1",
     "express": "^4.14.0",
     "express-session": "^1.14.0",
+    "moment": "^2.15.2",
     "mongodb": "^2.2.5",
     "mongoose": "^4.5.8",
     "multer": "^1.2.0",
@@ -31,6 +32,7 @@
     "gulp-nodemon": "^2.1.0",
     "gulp-replace": "^0.5.4",
     "gulp-uglify": "^2.0.0",
+    "gulp-zip": "^3.2.0",
     "load-json-file": "^2.0.0"
   }
 }

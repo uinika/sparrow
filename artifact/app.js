@@ -3,8 +3,8 @@
   require.config({
     paths: {
       'Text': 'libraries/core/require.text',
-      'App': 'partials/app',
-      'Router': 'partials/router'
+      'App': 'snippets/main',
+      'Router': 'snippets/router'
     }
   });
 
