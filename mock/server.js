@@ -23,9 +23,9 @@ App.use('/', (request, response, next) => {
 App.listen(5002);
 
 /* Informations */
-console.info(Color.blue('Livereload  started on http://localhost:5006'));
-console.info(Color.blue('Test started on http://localhost:5005/test'));
-console.info(Color.blue('Build started on http://localhost:5005/build'));
+console.info(Color.blue('Build started on http://localhost:5002/build'));
+console.info(Color.blue('Livereload started on http://localhost:5001'));
+console.info(Color.blue('Test started on http://localhost:5002/test'));
 
 /** Routers */
 App.use('/', require('./login/api'));

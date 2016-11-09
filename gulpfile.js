@@ -38,7 +38,7 @@ Gulp.task("default", ["pack"], () => {
   ];
   Connect.server({
     root: "artifact",
-    port: 5003,
+    port: 5001,
     livereload: true
   });
   Gulp.watch(target, () => {

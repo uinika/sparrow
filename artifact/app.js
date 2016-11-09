@@ -8,8 +8,10 @@
     }
   });
 
-  require(['App'], function(App) {
+  require(['App'], initialize);
+
+  function initialize(App) {
     App.initialize();
-  });
+  }
 
 })();
