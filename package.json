@@ -2,7 +2,7 @@
   "name": "sparrow",
   "version": "1.0.0",
   "description": "A Backbone Project.",
-  "main": "index.js",
+  "main": "electron.js",
   "repository": {
     "type": "git",
     "url": "http://192.168.13.21/zhengh/hummingbird.git"
