@@ -1,18 +1,18 @@
 define(
   "Router",
-  ['snippets/login/script'],
-  function(loginView) {
+  ["snippets/login/script", "snippets/layout/script"],
+  function(login, layout) {
     var Router = Backbone.Router.extend({
       routes: {
-        '': 'login',
-        'login': 'login',
-        'dashboard': 'dashboard'
+        "": "login",
+        "login": "login",
+        "layout": "layout"
       },
       login: function() {
-        new loginView().render();
+        new login().render();
       },
-      dashboard: function() {
-        console.log('dashboard');
+      layout: function() {
+        new layout().render();
       }
     })
     return Router;

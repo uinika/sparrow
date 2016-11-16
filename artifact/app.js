@@ -6,7 +6,8 @@
       "underscore": "libraries/core/lodash",
       "backbone": "libraries/core/backbone",
       "handlebars": "libraries/core/handlebars",
-      "bootstrap": "libraries/theme/bootstrap/js/bootstrap.min",
+      "bootstrap": "libraries/theme/bootstrap/js/bootstrap",
+      "admin": "libraries/theme/admin/js/app",
       "Text": "libraries/core/require.text",
       "domReady": "libraries/core/require.domReady",
       "Router": "snippets/router",
@@ -23,10 +24,11 @@
         exports: "Handlebars"
       },
       "bootstrap": ["jquery"],
+      "admin": ["jquery", "bootstrap"],
     }
   });
 
-  require(["snippets/main"], initialize);
+  require(["snippets/init"], initialize);
 
   function initialize(App) {
     App.initialize();
