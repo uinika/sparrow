@@ -12,6 +12,11 @@
       "domReady": "libraries/core/require.domReady",
       "Router": "snippets/router",
     },
+    map: {
+      "*": {
+        "CSS": "libraries/core/require.css"
+      }
+    },
     shim: {
       "backbone": {
         deps: ["underscore", "jquery"],
@@ -28,10 +33,10 @@
     }
   });
 
-  require(["snippets/init"], initialize);
-
-  function initialize(App) {
-    App.initialize();
-  }
+  require(["jquery", "underscore", "backbone", "handlebars", "bootstrap", "admin", "Router"], 
+    function($, _, Backbone, Handlebars, Bootstrap, Admin, Router){
+      Backbone.history.start()
+    }
+  );
 
 })();

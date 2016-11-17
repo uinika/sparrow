@@ -14,7 +14,7 @@ define(
       layout: function() {
         new layout().render();
       }
-    })
-    return Router;
+    });
+    return new Router();
   }
 );
