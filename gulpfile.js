@@ -34,7 +34,9 @@ Gulp.task("pack", () => {
 /** gulp reload*/
 Gulp.task("default", ["pack"], () => {
   const target = [
-    "./artifact/**/*.*"
+    "./artifact/**/*.js",
+    "./artifact/**/*.css",
+    "./artifact/**/*.html",
   ];
   Connect.server({
     root: "artifact",
