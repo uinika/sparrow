@@ -1,6 +1,6 @@
 define(
   "Router",
-  ["snippets/login/script", "snippets/layout/script"],
+  ["snippets/login/script.view", "snippets/layout/script.view"],
   function(login, layout) {
     var Router = Backbone.Router.extend({
       routes: {

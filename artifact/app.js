@@ -33,8 +33,8 @@
     }
   });
 
-  require(["jquery", "underscore", "backbone", "handlebars", "bootstrap", "admin", "Router"], 
-    function($, _, Backbone, Handlebars, Bootstrap, Admin, Router){
+  require(["backbone", "admin", "Router"], 
+    function(Backbone, Admin, Router){
       Backbone.history.start()
     }
   );
