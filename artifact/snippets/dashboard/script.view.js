@@ -7,7 +7,7 @@ define(
   ],
   function(Backbone, Handlebars, Html, Router){
     return Backbone.View.extend({
-      el: "#app",
+      el: "#main",
       template: Handlebars.compile(Html),
       events: {
       },
@@ -17,4 +17,4 @@ define(
       }
     });
   }
-); 
+);

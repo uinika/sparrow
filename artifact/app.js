@@ -3,7 +3,7 @@
   require.config({
     paths: {
       "jquery": "libraries/core/jquery",
-      "underscore": "libraries/core/lodash",
+      "underscore": "libraries/core/underscore",
       "backbone": "libraries/core/backbone",
       "handlebars": "libraries/core/handlebars",
       "bootstrap": "libraries/theme/bootstrap/js/bootstrap",

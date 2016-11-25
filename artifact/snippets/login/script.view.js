@@ -2,7 +2,7 @@ define(
   [
     "router",
     "handlebars",
-    "text!snippets/login/page.html",
+    "text!snippets/login/raw.html",
     "snippets/login/script.model",
     "libraries/plugin/iCheck/icheck.js",
     "css!libraries/plugin/iCheck/square/blue.css"
@@ -24,9 +24,8 @@ define(
         return this;
       },
       login: function () {
-        Backbone.history.navigate("layout", {
-          trigger: true
-        });
+        var login = new Model();
+        login.auth();
       }
     });
   }
