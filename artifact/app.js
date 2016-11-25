@@ -8,13 +8,14 @@
       "handlebars": "libraries/core/handlebars",
       "bootstrap": "libraries/theme/bootstrap/js/bootstrap",
       "admin": "libraries/theme/admin/js/app",
-      "Text": "libraries/core/require.text",
+      "text": "libraries/core/require.text",
       "domReady": "libraries/core/require.domReady",
-      "Router": "snippets/router",
+      "router": "snippets/router",
+      "http": "snippets/common/http"
     },
     map: {
       "*": {
-        "CSS": "libraries/core/require.css"
+        "css": "libraries/core/require.css"
       }
     },
     shim: {
@@ -25,15 +26,14 @@
       "underscore": {
         exports: "_"
       },
-      "handlebars": {
-        exports: "Handlebars"
-      },
+      "http": ["jquery"],
       "bootstrap": ["jquery"],
       "admin": ["jquery", "bootstrap"],
-    }
+    },
+    waitSeconds: 0
   });
 
-  require(["backbone", "admin", "Router"], 
+  require(["backbone", "admin", "router", "http"], 
     function(Backbone, Admin, Router){
       Backbone.history.start()
     }

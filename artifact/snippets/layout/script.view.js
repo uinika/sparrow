@@ -1,9 +1,14 @@
 define(
-  ["backbone","handlebars", 'Text!snippets/layout/view.html', 'Router'],
-  function(Backbone, Handlebars, html, Router){
+  [
+   "backbone",
+   "handlebars",
+   "text!snippets/layout/page.html",
+   "router"
+  ],
+  function(Backbone, Handlebars, Html, Router){
     return Backbone.View.extend({
       el: "#app",
-      template: Handlebars.compile(html),
+      template: Handlebars.compile(Html),
       events: {
       },
       render: function() {

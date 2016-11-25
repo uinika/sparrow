@@ -9,7 +9,7 @@ const Express = require('express'),
 App.use('/test', Express.static('./artifact'));
 App.use('/build', Express.static('./build'));
 App.use(Cors({
-  origin: 'http://localhost:5006',
+  origin: 'http://localhost:5001',
   methods: 'GET, POST, PUT, DELETE, OPTIONS',
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,

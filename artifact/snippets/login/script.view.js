@@ -1,16 +1,16 @@
 define(
   [
-    "Text!snippets/login/view.html",
-    "Text!snippets/login/style.less",
+    "router",
     "handlebars",
-    "Router",
+    "text!snippets/login/page.html",
+    "snippets/login/script.model",
     "libraries/plugin/iCheck/icheck.js",
-    "CSS!libraries/plugin/iCheck/square/blue.css"
+    "css!libraries/plugin/iCheck/square/blue.css"
   ],
-  function (html, css, Handlebars, Router) {
+  function (Router, Handlebars, Html, Model) {
     return Backbone.View.extend({
       el: "#app",
-      template: Handlebars.compile(html),
+      template: Handlebars.compile(Html),
       events: {
         "input": "checked",
         "click .btn": "login"

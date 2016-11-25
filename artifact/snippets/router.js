@@ -1,5 +1,5 @@
 define(
-  "Router",
+  "router",
   ["snippets/login/script.view", "snippets/layout/script.view"],
   function(login, layout) {
     var Router = Backbone.Router.extend({
