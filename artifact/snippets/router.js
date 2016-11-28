@@ -1,15 +1,17 @@
 define(
   "router",
-  ["snippets/login/script.view",
-   "snippets/layout/script.view",
-   "snippets/dashboard/script.view"],
+  [
+    "snippets/login/script.view",
+    "snippets/layout/script.view",
+    "snippets/dashboard/script.view"
+  ],
   function(login, layout, dashboard) {
     var Router = Backbone.Router.extend({
       routes: {
         "": "login",
         "login": "login",
         "layout": "layout",
-        "dashboard": "dashboard"
+        "layout/dashboard": "layout_dashboard"
       },
       login: function() {
         new login().render();
@@ -17,8 +19,9 @@ define(
       layout: function() {
         new layout().render();
       },
-      dashboard: function() {
-        new dashboard().render(); 
+      layout_dashboard: function() {
+        this.layout();
+        new dashboard().render();
       }
     });
     return new Router();

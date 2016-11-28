@@ -12,7 +12,7 @@ define(
         .then(function(data){
           if(Http.verify(data, 200)){
             this.set(data);
-            Backbone.history.navigate("layout", {trigger: true});
+            Backbone.history.navigate("layout/dashboard", {trigger: true});
             sessionStorage.setItem(
               "login", data
             );
