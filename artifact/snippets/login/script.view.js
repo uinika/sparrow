@@ -1,13 +1,14 @@
 define(
   [
     "router",
+    "domReady",
     "handlebars",
     "text!snippets/login/raw.html",
     "snippets/login/script.model",
     "libraries/plugin/iCheck/icheck.js",
     "css!libraries/plugin/iCheck/square/blue.css"
   ],
-  function (Router, Handlebars, Html, Model) {
+  function (Router, domReady, Handlebars, Html, Model) {
     return Backbone.View.extend({
       el: "#app",
       template: Handlebars.compile(Html),
@@ -17,9 +18,11 @@ define(
       },
       render: function () {
         this.$el.html(this.template());
-        this.$("input").iCheck({
-          checkboxClass: "icheckbox_square-blue",
-          radioClass: "iradio_square-blue"
+        domReady(function(){
+          this.$("input").iCheck({
+            checkboxClass: "icheckbox_square-blue",
+            radioClass: "iradio_square-blue"
+          });
         });
         return this;
       },

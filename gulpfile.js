@@ -14,16 +14,19 @@ const Gulp = require("gulp"),
 /** gulp */
 Gulp.task("default", () => {
  // less
- const lessSource = "./artifact/snippets/**/*.less";
+ const lessSource = [
+   "./artifact/snippets/global/*.less",
+   "./artifact/snippets/snippets/*.less"
+ ];
  const lessTarget = "./artifact/"; 
  const combine = () => {
-    Gulp.src([lessSource])
+    Gulp.src(lessSource)
       .pipe(Concat("bundle.css"))
       .pipe(Less())
       .pipe(Gulp.dest(lessTarget));
   };
   combine();
-  Gulp.watch([lessSource], combine);
+  Gulp.watch(lessSource, combine);
   // nodemon
   const serverSource = "./mock/server.js" 
   Nodemon({
