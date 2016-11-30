@@ -35,6 +35,9 @@ body {
   top: -15px;
   left: 3px;
 }
+#layout .main-header .sidebar-toggle:before {
+  content: "\f258" !important;
+}
 #login {
   position: absolute;
   width: 100%;

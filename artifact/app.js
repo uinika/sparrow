@@ -10,7 +10,7 @@ require.config({
     "text": "libraries/core/require.text",
     "domReady": "libraries/core/require.domReady",
     "router": "snippets/router",
-    "http": "global/http"
+    "http": "general/http"
   },
   map: {
     "*": {

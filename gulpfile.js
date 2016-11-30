@@ -15,8 +15,8 @@ const Gulp = require("gulp"),
 Gulp.task("default", () => {
  // less
  const lessSource = [
-   "./artifact/snippets/global/*.less",
-   "./artifact/snippets/snippets/*.less"
+   "./artifact/general/**/*.less",
+   "./artifact/snippets/**/*.less"
  ];
  const lessTarget = "./artifact/"; 
  const combine = () => {
