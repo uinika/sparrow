@@ -1,0 +1,21 @@
+{
+  "head": {
+    "status": 200,
+    "token": null,
+    "message": null,
+    "total": 5
+  },
+  "body": [ {
+    "docType": "民事判决书",
+    "verdictNum": 11425
+  }, {
+    "docType": "民事裁定书",
+    "verdictNum": 8246
+  }, {
+    "docType": "民二庭事由：民事判决书附件：",
+    "verdictNum": 1
+  }, {
+    "docType": "签发：单位及拟稿人：朱军良事由：民事裁定书附件：",
+    "verdictNum": 2
+  }]
+}

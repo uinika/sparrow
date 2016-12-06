@@ -1,0 +1,21 @@
+{
+  "head": {
+    "status": 200,
+    "token": null,
+    "message": null,
+    "total": 4
+  },
+  "body": [{
+    "courtLevel": "人民法院",
+    "verdictNum": 19673
+  }, {
+    "courtLevel": "中级人民法院",
+    "verdictNum": 1
+  }, {
+    "courtLevel": "高级人民法院",
+    "verdictNum": 1
+  }, {
+    "courtLevel": "最高人民法院",
+    "verdictNum": 1
+  }]
+}

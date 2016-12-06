@@ -1,0 +1,44 @@
+{
+  "head": {
+    "status": 200,
+    "token": null,
+    "message": null,
+    "total": 1
+  },
+  "body": [{
+    "templateId": 1,
+    "category": "民事案件",
+    "templateName": "民事判决书(模板一)",
+    "templateArticle": {
+      "indexTitle": {
+        "courtName": "成都高新技术产业开发区人民法院",
+        "lawCaseTitle": "民事判决书",
+        "lawCaseCode": "(2016)川0191民初482号"
+      },
+      "parties": {
+        "accuser": "原告：吴世玉，女，汉族，1936年5月28日出生，住成都市高新区创业路9号21栋1单元1号。",
+        "accuserAgent": "委托诉讼代理人：周忠强，男，汉族，1989年6月10日出生，住成都市青羊区宁夏街136号附9号，系成都高新区社会事业局民政司法处推荐。",
+        "defendant": "被告：陈真秀，女，汉族，1957年2月19日出生，住成都市高新区创业路9号16栋2单元7号。",
+        "defendantAgent": "委托诉讼代理人：",
+        "caseGeneral": "原告吴世玉与被告陈真秀民间借贷纠纷一案，本院于2016年01月12日立案受理，并依法适用简易程序，于<开庭日期>公开开庭进行了审理。原告吴世玉及其委托代理人周忠强、被告陈真秀到庭参加诉讼。本案现已依法审理终结。"
+      },
+      "fact": {
+        "claims": "原告吴世玉诉称：<原告诉称内容>",
+        "argued": "被告陈真秀辩称：对<金额>借款没有意见，还未归还原告，利息不予认可。",
+        "factResult": ""
+      },
+      "reason": "本院认为，",
+      "caseMain": "据此，依照《中华人民共和国合同法》第五十四条、第五十五条、第五十八条、第五十九条、第六十条、第九十三条、第九十四条、第九十七条、第一百零七条、第一百零九条、第一百一十四条、第二百条、第二百零五条、第二百零六条、第二百零七条、第二百一十一条，《中华人民共和国担保法》第十八条、第二十一条、第二十六条，《中华人民共和国公司法》第十四条第一款，《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十六条、第二十八条、第二十九条，《中华人民共和国民事诉讼法》第六十四条、第一百三十四条第一款、第一百四十四条之规定，判决如下：",
+      "bottom": {
+        "legalCosts": "案件受理费<span ng-click='Editor.Operation.popCalculator()' id='a'>_</span>元（减半收取<span ng-click='Editor.Operation.popCalculator()' id='aa'>_</span>元），诉讼保全费<span ng-click='Editor.Operation.popCalculator()' id='b'>_</span>元，共计<span ng-click='Editor.Operation.popCalculator()' id='bb'>_</span>元，由原告吴世玉负担<span ng-click='Editor.Operation.popCalculator()' id='c'>_</span>元，被告陈真秀负担<span ng-click='Editor.Operation.popCalculator()' id='d'>_</span>元。",
+        "informInfo": "如不服本判决，可在判决书送达之日起十五日内，向本院递交上诉状，并按照对方当事人的人数提出副本，上诉于四川省中级人民法院。"
+      },
+      "inscribe": {
+        "chiefJudge": "审判长 ",
+        "judge": "<p>审判员</p><p>审判员　　方利敏</p>",
+        "judgmentDate": "二〇一六年四月十一日",
+        "courtClerk": "书记员　　杨旻昱"
+      }
+    }
+  }]
+}

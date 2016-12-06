@@ -3,17 +3,23 @@
     "backbone",
     "handlebars",
     "text!snippets/editor/case/raw.html",
-    "router"
-  ], test);
+    "router",
+    "snippets/editor/case/script.model.js"
+  ], main);
 
-  function test(Backbone, Handlebars, Html, Router) {
+  function main(Backbone, Handlebars, Html, Router, CaseModel) {
     return Backbone.View.extend({
       el: "#main",
       template: Handlebars.compile(Html),
       events: {},
+      initialize: function() {
+
+      },
       render: function () {
-        this.$el.html(this.template());
-        return this;
+        var test = new CaseModel();
+        test.on("sync", function(data) {
+          this.$el.html(this.template(test.toJSON()));
+        }.bind(this))
       }
     });
   };

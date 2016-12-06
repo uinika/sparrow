@@ -29,3 +29,5 @@ console.info(Color.blue('Test started on http://localhost:5002/test'));
 
 /** Routers */
 App.use('/', require('./login/api'));
+App.use('/', require('./verdict/api'));
+App.use('/', require('./repository/api'));
