@@ -1,0 +1,93 @@
+<section class="content-header">
+  <h1>
+    案件列表
+    <small>待裁判案件</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i>&nbsp;主页</a></li>
+    <li class="active">案件列表</li>
+  </ol>
+</section>
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box">
+        <div class="box-header">
+          <div class="box-title">
+            <form action="" class="form-inline">
+              <select class="form-control input-sm">
+                <option>名称</option>
+                <option>案由</option>
+                <option>原告</option>
+                <option>原告委托代理人</option>
+                <option>被告</option>
+                <option>被告委托代理人</option>
+                <option>诉求</option>
+              </select>
+              <div class="input-group input-group-sm" style="width: 250px;">
+                <input type="text" name="table_search" class="form-control pull-right" placeholder="查询">
+                <div class="input-group-btn">
+                  <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <ul class="pagination pagination-sm no-margin pull-right">
+            <li><a href="#">«</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">»</a></li>
+          </ul>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body  no-padding">
+          <table class="table table-hover table-condensed table-bordered">
+            <tbody>
+              <tr>
+                <th>名称</th>
+                <th>案由</th>
+                <th>原告</th>
+                <th>委托代理人</th>
+                <th>被告</th>
+                <th>委托代理人</th>
+                <th>诉求</th>
+                <th>操作</th>
+              </tr>
+              {{#each body}}
+              <tr>
+                <td>{{lawCaseTitle}}</td>
+                <td>
+                  <span class="badge">{{causeOfAction}}</span>
+                </td>
+                <td>{{accuserName}}</td>
+                <td>{{accuserAgentName}}</td>
+                <td>{{defendantName}}</td>
+                <td>{{defendantAgentName}}</td>
+                <td>{{claims}}</td>
+                <td>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-danger">生成裁判文书</button>
+                    <button type="button" class="btn btn-sm btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+        <!-- /.box-body -->
+      </div>
+    </div>
+  </div>
+</section>

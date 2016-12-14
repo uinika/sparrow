@@ -4,8 +4,8 @@ define(
     "snippets/login/script.view",
     "snippets/layout/script.view",
     "snippets/dashboard/script.view",
-    "snippets/editor/case/script.view",
-    "snippets/editor/verdict/script.view"
+    "snippets/judgment/case/script.view",
+    "snippets/judgment/template/script.view"
   ],
   function(login, layout, dashboard, editorCase, editorVerdict) {
     var Router = Backbone.Router.extend({
