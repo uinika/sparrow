@@ -14,6 +14,7 @@ require.config({
     // custom
     router: "snippets/router",
     http: "general/http",
+    util: "general/util",
   },
   map: {
     "*": {
@@ -35,7 +36,7 @@ require.config({
   waitSeconds: 0
 });
 
-require(["backbone", "admin", "router", "http"], 
+require(["backbone", "admin", "router", "http", "util"], 
   function(Backbone, Admin, Router){
     Backbone.history.start()
   }

@@ -1,5 +1,5 @@
 (function () {
-  
+
   define([
     "backbone",
     "handlebars",
@@ -7,8 +7,8 @@
     "text!snippets/judgment/case/raw.html",
     "router",
     "snippets/judgment/case/script.model.js",
-    "libraries/plugin/datatables/jquery.dataTables",
-    "css!libraries/plugin/datatables/jquery.dataTables.css"
+    "libraries/plugin/datatables/js/jquery.dataTables",
+    "css!libraries/plugin/datatables/css/jquery.dataTables.css"
   ], main);
 
   function main(Backbone, Handlebars, domReady, Html, Router, Model) {
@@ -18,15 +18,18 @@
       template: Handlebars.compile(Html),
       events: {},
       initialize: function () {
-        this.model.bind('change', _.bind(this.render, this));
-        domReady(function(){
-
-        })
+        this.model.bind('change', this.render, this);
       },
       render: function () {
         this.$el.html(
-          this.template(this.model.toJSON())
+          this.template(this.model.attributes)
         );
+        $("#test").DataTable({
+          data: this.model.attributes.body,
+          column: [{
+            data: "accuserName"
+          }]
+        });
       }
     });
   };
