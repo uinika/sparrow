@@ -1,4 +1,5 @@
 # Sparrow 
+![sparrow.png](./artifact/assets/sparrow.png)
 
 ## Installation
 1. git clone http://192.168.13.21/zhengh/sparrow.git
