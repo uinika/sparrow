@@ -15,10 +15,10 @@ const Gulp = require("gulp"),
 Gulp.task("default", () => {
  // less
  const lessSource = [
-   "./artifact/general/**/*.less",
-   "./artifact/snippets/**/*.less"
+   "./src/general/**/*.less",
+   "./src/snippets/**/*.less"
  ];
- const lessTarget = "./artifact/"; 
+ const lessTarget = "./src/"; 
  const combine = () => {
     Gulp.src(lessSource)
       .pipe(Concat("bundle.css"))
@@ -36,12 +36,12 @@ Gulp.task("default", () => {
   });
   // livereload
   const livereloadSource = [
-    "./artifact/**/*.js",
-    "./artifact/bundle.css",
-    "./artifact/**/*.html",
+    "./src/**/*.js",
+    "./src/bundle.css",
+    "./src/**/*.html",
   ];
   Connect.server({
-    root: "artifact",
+    root: "src",
     port: 5001,
     livereload: true
   });
@@ -54,7 +54,7 @@ Gulp.task("default", () => {
 
 /** gulp build */
 Gulp.task("build", () => {
-  const source = "./artifact/";
+  const source = "./src/";
   const target = "./build/";
   // html
   Gulp.src([source + "snippets/**/*.html"])

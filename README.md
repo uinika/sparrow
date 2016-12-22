@@ -2,11 +2,13 @@
 ![sparrow.png](./artifact/assets/sparrow.png)
 
 ## Installation
+```
 1. git clone http://192.168.13.21/zhengh/sparrow.git
 2. cd sparrow
-3. npm Install
+3. npm install
 4. gulp
 5. Open browser with http://localhost:5001
+```
 
 ## Library
 * [Backbone 1.3.3](http://backbonejs.org/)
@@ -14,5 +16,5 @@
 * [Underscore 1.8.3](http://underscorejs.org/)
 * [Handlebars 4.0.5](http://handlebarsjs.com/)
 * [RequireJS 2.3.2](http://requirejs.org/)
-* [jQuery 3.3.1](http://jquery.com/)
 * [AdminLTE 2.3.7](https://almsaeedstudio.com/)
+* [Jquery 3.3.1](http://jquery.com/)
