@@ -17,9 +17,7 @@ require.config({
     util: "general/util",
   },
   map: {
-    "*": {
-      css: "libraries/core/require.css"
-    }
+    "*": {css: "libraries/core/require.css"}
   },
   shim: {
     backbone: {
@@ -29,9 +27,9 @@ require.config({
     underscore: {
       exports: "_"
     },
-    http: ["jquery"],
     bootstrap: ["jquery"],
     admin: ["jquery", "bootstrap"],
+    http: ["jquery"],
   },
   waitSeconds: 0
 });

@@ -25,7 +25,7 @@ define(
       },
       layout_dashboard: function () {
         this.layout();
-        new dashboard().render();
+        this.render(new dashboard);
       },
       layout_editor_case: function () {
         this.layout();
@@ -36,6 +36,14 @@ define(
         new editorVerdict().render();
       },
       initialize: function () {
+        this.render = function (view) {
+          window.viewArray = [];
+          if (!_.isEmpty(view)) {
+            window.viewArray.push(view);
+          } else {
+            view.remove();
+          }
+        }
       }
     });
     return new Router();
