@@ -18,18 +18,12 @@
       template: Handlebars.compile(Html),
       events: {},
       initialize: function () {
-        this.model.bind('change', this.render, this);
+        this.listenTo(this.model, 'change', this.render);
       },
       render: function () {
         this.$el.html(
           this.template(this.model.attributes)
         );
-        $("#test").DataTable({
-          data: this.model.attributes.body,
-          column: [{
-            data: "accuserName"
-          }]
-        });
       }
     });
   };

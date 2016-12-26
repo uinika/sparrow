@@ -10,16 +10,15 @@ define(
   ],
   function (Router, domReady, Handlebars, Html, Model) {
     return Backbone.View.extend({
-      // el: "#app",
+      el: "#app",
       template: Handlebars.compile(Html),
       events: {
         "input": "checked",
         "click .btn": "login"
       },
       render: function () {
-        this.close();
-        this.$el.html(this.template());
-        this.$("input").iCheck({
+        var node = this.$el.html(this.template());
+        node.find("input").iCheck({
           checkboxClass: "icheckbox_square-blue",
           radioClass: "iradio_square-blue"
         });

@@ -18,7 +18,7 @@ define(
         "layout/editor/verdict": "layout_editor_verdict"
       },
       login: function () {
-        this.represent(new login());
+        new login().render();
       },
       layout: function () {
         new layout().render();
@@ -36,24 +36,6 @@ define(
         new editorVerdict().render();
       },
       initialize: function () {
-        //
-        Backbone.View.prototype.close = function () {
-          console.log(this.el);
-          this.remove();
-          this.unbind();
-          if (this.onClose) {
-            this.onClose();
-          }
-        };
-        //
-        this.represent = function (view) {
-          if (this.currentView) {
-            this.currentView.close();
-          }
-          this.currentView = view;
-          this.currentView.render();
-          $("#app").html(this.currentView.el);
-        }
       }
     });
     return new Router();
