@@ -1,11 +1,10 @@
 define(
   "router", [
     "util",
-    "snippets/login/script.view",
-    "snippets/layout/script.view",
-    "snippets/dashboard/script.view",
-    "snippets/judgment/case/script.view",
-    "snippets/judgment/template/script.view"
+    "snippets/login/script",
+    "snippets/layout/script",
+    "snippets/dashboard/script",
+    "snippets/judgment/case/script"
   ],
   function (Util, login, layout, dashboard, editorCase, editorVerdict) {
     var Router = Backbone.Router.extend({
@@ -14,8 +13,7 @@ define(
         "login": "login",
         "layout": "layout",
         "layout/dashboard": "layout_dashboard",
-        "layout/editor/case": "layout_editor_case",
-        "layout/editor/verdict": "layout_editor_verdict"
+        "layout/editor/case": "layout_editor_case"
       },
       login: function () {
         new login().render();
@@ -25,15 +23,11 @@ define(
       },
       layout_dashboard: function () {
         this.layout();
-        this.render(new dashboard);
+        new dashboard().render();
       },
       layout_editor_case: function () {
         this.layout();
         new editorCase().render();
-      },
-      layout_editor_verdict: function () {
-        this.layout();
-        new editorVerdict().render();
       },
       initialize: function () {
         this.render = function (view) {
