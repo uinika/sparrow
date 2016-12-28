@@ -1,103 +1,185 @@
-<section class="content-header">
-  <h1>
-    案件列表
-    <small>案件与对应裁判文书</small>
-  </h1>
-  <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
-    <li class="active">案件列表</li>
-  </ol>
-</section>
-<section class="content">
-  <div class="column">
-    {{#each body}}
-    <div class="col-md-4">
-      <div class="box box-danger">
-        <div class="box-header with-border">
-          <h3 class="box-title">
-            <span class="label label-primary">{{causeOfAction}}</span> {{lawCaseTitle}}
-          </h3>
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-            </button>
+<div id="case">
+  <section class="content-header">
+    <h1>
+      案件列表
+      <small>案件与对应裁判文书</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i>首页</a></li>
+      <li class="active">案件列表</li>
+    </ol>
+  </section>
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box collapsed-box">
+          <div class="box-header">
+            <!-- search bar -->
+            <form class="pull-left form-inline">
+              <select class="form-control">
+                <option>全部案件</option>
+                <option>已裁判案件</option>
+                <option>待裁判案件</option>
+              </select>
+              <input type="text" class="form-control" placeholder="案件名称">
+              <input type="text" class="form-control" placeholder="当事人">
+              <input type="text" class="form-control" placeholder="代理人">
+              <button type="button" class="btn btn-primary btn-flat">
+                <i class="fa fa-search" aria-hidden="true"></i>&nbsp;搜索
+              </button>
+              <button type="button" data-widget="collapse" class="btn btn-default btn-flat">
+                高级搜索&nbsp;<i class="fa fa-plus" aria-hidden="true"></i>
+              </button>
+            </form>
+            <ul class="pull-right pagination pagination-sm no-margin pull-right">
+              <li><a href="#">«</a></li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">»</a></li>
+            </ul>
+            <!-- #search bar -->
           </div>
-        </div>
-        <div class="box-body" style="display: block;">
-          <ul class="list-group">
-            <li class="list-group-item">
-              <span class="test-muted">原告：{{accuserName}}</span>
-              <span class="pull-right label label-default">委托代理人：{{accuserAgentName}}</span>
-            </li>
-            <li class="list-group-item">
-              <span class="test-muted">原告：{{defendantName}}</span>
-              <span class="pull-right label label-default">委托代理人：{{defendantAgentName}}</span>
-            </li>
-            <li class="list-group-item">
-              开庭时间：<button type="button" class="btn btn-default btn-xs">2006-12-32 05:32</button>
-            </li>
-            <li class="list-group-item">诉求：{{claims}}</li>
-            <!-- Operations -->
-            <div class="btn-group pull-right">
-              <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-gavel">&nbsp;判决</i>
-                    <span class="caret"></span>
-                  </button>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a><i class="fa fa-newspaper-o">&nbsp;普通式</i></a>
-                  </li>
-                  <li role="separator" class="divider"></li>
-                  <li>
-                    <a><i class="fa fa-sort-numeric-asc">&nbsp;要素式</i></a>
-                  </li>
-                  <li role="separator" class="divider"></li>
-                  <li>
-                    <a><i class="fa fa-tag">&nbsp;令状式</i></a>
-                  </li>
-                  <li role="separator" class="divider"></li>
-                  <li>
-                    <a><i class="fa fa-table">&nbsp;表格式</i></a>
-                  </li>
-                </ul>
+          <div class="box-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>案号</label>
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i class="fa fa-sort-numeric-asc"></i>
+                    </div>
+                    <input type="text" class="form-control pull-right" placeholder="请输入案号">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>文书类型</label>
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i class="fa fa-newspaper-o"></i>
+                    </div>
+                    <input type="text" class="form-control pull-right" placeholder="请选择文书类型">
+                  </div>
+                </div>
               </div>
-              <!-- Operations -->
-              <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-wrench">&nbsp;操作</i>
-                    <span class="caret"></span>
-                  </button>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a>
-                      <span class="text-danger">
-                        <i class="fa fa-remove">&nbsp;删除文书</i>
-                      </span>
-                    </a>
-                  </li>
-                  <li role="separator" class="divider"></li>
-                  <li>
-                    <a>
-                      <span class="text-success">
-                        <i class="fa fa-edit">&nbsp;修改文书</i>
-                      </span>
-                    </a>
-                  </li>
-                  <li role="separator" class="divider"></li>
-                  <li>
-                    <a>
-                      <span class="text-primary">
-                        <i class="fa fa-book">&nbsp;申请为模板</i>
-                      </span>
-                    </a>
-                  </li>
-                </ul>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>案由</label>
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i class="fa fa-road"></i>
+                    </div>
+                    <input type="text" class="form-control pull-right" placeholder="请输入案由">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>日期范围</label>
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i class="fa fa-calendar"></i>
+                    </div>
+                    <input type="text" class="form-control pull-right" placeholder="请选择日期范围">
+                  </div>
+                </div>
               </div>
             </div>
-          </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  {{/each}}
-</section>
+    <!-- search -->
+    <!-- #search -->
+    <div class="row">
+      {{#each body}}
+      <div class="col-md-6">
+        <div class="box box-danger">
+          <div class="box-header with-border">
+            <h3 class="box-title">
+              <span class="label label-default">{{lawCaseTitle}}</span>
+            </h3>
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+            </button>
+            </div>
+          </div>
+          <div class="box-body" style="display: block;">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <span class="test-muted">原告：{{accuserName}}</span>
+                <span class="pull-right">委托代理人：{{accuserAgentName}}</span>
+              </li>
+              <li class="list-group-item">
+                <span class="test-muted">原告：{{defendantName}}</span>
+                <span class="pull-right">委托代理人：{{defendantAgentName}}</span>
+              </li>
+              <li class="list-group-item">
+                开庭时间：<button type="button" class="btn btn-default btn-xs">2006-12-32 05:32</button>
+                <span class="pull-right label label-info">{{causeOfAction}}</span>
+              </li>
+              <li class="list-group-item">诉求：{{claims}}</li>
+              <!-- Operations -->
+              <div class="btn-group pull-right">
+                <div class="btn-group dropup">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-gavel">&nbsp;判决</i>
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a><i class="fa fa-newspaper-o">&nbsp;普通式</i></a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                      <a><i class="fa fa-sort-numeric-asc">&nbsp;要素式</i></a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                      <a><i class="fa fa-tag">&nbsp;令状式</i></a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                      <a><i class="fa fa-table">&nbsp;表格式</i></a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- Operations -->
+                <div class="btn-group dropup">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-wrench">&nbsp;操作</i>
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a>
+                        <span class="text-danger">
+                        <i class="fa fa-remove">&nbsp;删除文书</i>
+                      </span>
+                      </a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                      <a>
+                        <span class="text-success">
+                        <i class="fa fa-edit">&nbsp;修改文书</i>
+                      </span>
+                      </a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                      <a>
+                        <span class="text-primary">
+                        <i class="fa fa-book">&nbsp;申请为模板</i>
+                      </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </section>
+</div>

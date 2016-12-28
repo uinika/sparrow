@@ -18,6 +18,9 @@ body {
   width: 100%;
   height: 100%;
 }
+#dasbhoard .widget-user-header h5 {
+  margin: 0;
+}
 #layout .emblem {
   display: inline-block;
   width: 46px;
@@ -51,4 +54,7 @@ body {
   padding-bottom: 50%;
   background: url("assets/logo.png") no-repeat;
   background-size: 150px;
+}
+#case .box-title {
+  font-size: 16px;
 }
