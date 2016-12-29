@@ -4,7 +4,7 @@ define(
     "handlebars",
     "http",
     "text!snippets/login/raw.html",
-    "libraries/plugin/iCheck/icheck.js",
+    "jquery.icheck",
     "css!libraries/plugin/iCheck/square/blue.css"
   ],
   function (Router, Handlebars, Http, Html) {

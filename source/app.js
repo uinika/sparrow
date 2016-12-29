@@ -1,7 +1,7 @@
 require.config({
   baseUrl: "/",
   paths: {
-    // core
+    /*----- core -----*/
     "text": "libraries/core/require.text",
     "domReady": "libraries/core/require.domReady",
     "admin": "libraries/theme/admin/js/app",
@@ -10,12 +10,12 @@ require.config({
     "backbone": "libraries/core/backbone",
     "handlebars": "libraries/core/handlebars",
     "bootstrap": "libraries/theme/bootstrap/js/bootstrap",
-    // general
+    /*----- general -----*/
     "router": "snippets/router",
     "http": "general/http",
     "util": "general/util",
-    // plugin
-
+    /*----- plugin -----*/
+    "jquery.icheck": "libraries/plugin/iCheck/icheck",
   },
   map: {
     "*": {
@@ -23,16 +23,21 @@ require.config({
     }
   },
   shim: {
+    /*----- core -----*/
+    "underscore": {
+      exports: "_"
+    },
     "backbone": {
       deps: ["underscore", "jquery"],
       exports: "Backbone"
     },
-    "underscore": {
-      exports: "_"
-    },
     "bootstrap": ["jquery"],
     "admin": ["jquery", "bootstrap"],
+    /*----- general -----*/
     "http": ["jquery"],
+    "util": ["jquery"],
+    /*----- general -----*/
+    "jquery.icheck": ["jquery"]
   },
   waitSeconds: 0
 });
