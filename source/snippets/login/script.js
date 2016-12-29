@@ -42,8 +42,8 @@ define(
         "click .btn": "login"
       },
       render: function () {
-        var node = this.$el.html(this.template());
-        node.find("input").iCheck({
+        this.$el.html(this.template());
+        this.$(".rember-me").iCheck({
           checkboxClass: "icheckbox_square-blue",
           radioClass: "iradio_square-blue"
         });

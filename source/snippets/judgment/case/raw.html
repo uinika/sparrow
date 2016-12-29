@@ -58,18 +58,27 @@
                     <div class="input-group-addon">
                       <i class="fa fa-newspaper-o"></i>
                     </div>
-                    <input type="text" class="form-control pull-right" placeholder="请选择文书类型">
+                    <select class="form-control">
+                      <option>普通式</option>
+                      <option>念头式</option>
+                      <option>表格式</option>
+                      <option>要素式</option>                      
+                    </select>
                   </div>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>案由</label>
+                  <label>案件类型</label>
                   <div class="input-group">
                     <div class="input-group-addon">
                       <i class="fa fa-road"></i>
                     </div>
-                    <input type="text" class="form-control pull-right" placeholder="请输入案由">
+                    <select class="form-control">
+                      <option>民事案件</option>
+                      <option>行政案件</option>
+                      <option>行政案件</option>
+                    </select>
                   </div>
                 </div>
                 <div class="form-group">
@@ -118,6 +127,23 @@
               </li>
               <li class="list-group-item">诉求：{{claims}}</li>
               <!-- Operations -->
+              <div class="btn-group pull-left">
+                <div class="btn-group dropup">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-qrcode">&nbsp;庭审笔录</i>
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a><i class="fa fa-sticky-note-o">&nbsp;第1次开庭</i></a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                      <a><i class="fa fa-sticky-note-o">&nbsp;第2次开庭</i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
               <div class="btn-group pull-right">
                 <div class="btn-group dropup">
                   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
