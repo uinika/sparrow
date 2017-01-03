@@ -1,5 +1,5 @@
 # Sparrow 
-![sparrow.png](./artifact/assets/sparrow.png)
+![sparrow.png](./source/assets/sparrow.png)
 
 ## Installation
 ```
