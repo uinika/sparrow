@@ -1,44 +1,36 @@
 define(
   "router", [
-    "util",
     "snippets/login/script",
     "snippets/layout/script",
     "snippets/dashboard/script",
-    "snippets/judgment/case/script"
+    "snippets/judgment/cases/script"
   ],
-  function (Util, login, layout, dashboard, editorCase, editorVerdict) {
+  function (Login, Layout, Dashboard, Cases) {
     var Router = Backbone.Router.extend({
+      initialize: function () {
+        this.app = $("#app");
+        this.layoutView = new Layout;
+      },
       routes: {
         '': "login",
         "login": "login",
-        "layout": "layout",
-        "layout/dashboard": "layout_dashboard",
-        "layout/editor/case": "layout_editor_case"
+        "dashboard": "dashboard",
+        "cases": "cases"
       },
       login: function () {
-        new login().render();
+        var loginView = new Login;
+        this.app.html(loginView.$el);
       },
-      layout: function () {
-        new layout().render();
+      dashboard: function () {
+        this.app.html(this.layoutView.$el);
+        var dashboardView = new Dashboard;
+        this.app.find("#main").html(dashboardView.$el);
       },
-      layout_dashboard: function () {
-        this.layout();
-        new dashboard().render();
+      cases: function () {
+        this.app.html(this.layoutView.$el);
+        var casesView = new Cases;
+        this.app.find("#main").html(casesView.$el);
       },
-      layout_editor_case: function () {
-        this.layout();
-        new editorCase().render();
-      },
-      initialize: function () {
-        this.render = function (view) {
-          window.viewArray = [];
-          if (!_.isEmpty(view)) {
-            window.viewArray.push(view);
-          } else {
-            view.remove();
-          }
-        }
-      }
     });
     return new Router();
   });

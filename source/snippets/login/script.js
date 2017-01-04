@@ -19,7 +19,7 @@ define(
           .then(function (data) {
             if (Http.verify(data, 200)) {
               this.set(data);
-              Backbone.history.navigate("layout/dashboard", {
+              Backbone.history.navigate("dashboard", {
                 trigger: true
               });
               sessionStorage.setItem(
@@ -35,8 +35,11 @@ define(
     });
 
     var View = Backbone.View.extend({
-      el: "#app",
+      id: "login",
       template: Handlebars.compile(Html),
+      initialize: function () {
+        this.render();
+      },
       events: {
         "input": "checked",
         "click .btn": "login"
@@ -56,5 +59,6 @@ define(
     });
 
     return View;
+    
   }
 );

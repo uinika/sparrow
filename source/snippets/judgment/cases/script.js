@@ -2,7 +2,7 @@
   define([
     "backbone",
     "handlebars",
-    "text!snippets/judgment/case/raw.html",
+    "text!snippets/judgment/cases/raw.html",
     "http"
   ], handler);
 
@@ -30,11 +30,12 @@
     });
 
     var View = Backbone.View.extend({
-      el: "#main",
+      id: "cases",
       model: new Model(),
       initialize: function () {
         var model = new Model();
         this.listenTo(this.model, 'change', this.render);
+        this.render();
       },
       template: Handlebars.compile(Html),
       events: {},

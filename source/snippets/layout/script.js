@@ -1,20 +1,24 @@
 define(
   [
-   "backbone",
-   "handlebars",
-   "text!snippets/layout/raw.html",
-   "router"
+    "backbone",
+    "handlebars",
+    "text!snippets/layout/raw.html",
+    "router"
   ],
-  function(Backbone, Handlebars, Html, Router){
+  function (Backbone, Handlebars, Html, Router) {
     return Backbone.View.extend({
-      el: "#app",
+      id: "layout",
+      initialize: function () {
+        this.render();
+      },
       template: Handlebars.compile(Html),
       events: {
+
       },
-      render: function() {
+      render: function () {
         this.$el.html(this.template());
         return this;
       }
     });
   }
-); 
+);
