@@ -22,15 +22,15 @@ define(
         this.app.html(loginView.$el);
       },
       dashboard: function () {
-        this.app.html(this.layoutView.$el);
         var dashboardView = new Dashboard;
-        this.app.find("#main").html(dashboardView.$el);
+        this.app.html(this.layoutView.$el)
+            .find("#main").html(dashboardView.$el);
       },
       cases: function () {
-        this.app.html(this.layoutView.$el);
         var casesView = new Cases;
-        this.app.find("#main").html(casesView.$el);
-      },
+        this.app.html(this.layoutView.$el)
+            .find("#main").html(casesView.$el);
+      }
     });
     return new Router();
   });
