@@ -3,7 +3,7 @@ define(
     "router",
     "handlebars",
     "http",
-    "text!snippets/login/raw.html",
+    "text!snippets/login/view.html",
     "jquery.icheck",
     "css!libraries/plugin/iCheck/square/blue.css"
   ],

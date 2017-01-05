@@ -2,7 +2,7 @@
   define([
     "backbone",
     "handlebars",
-    "text!snippets/judgment/cases/raw.html",
+    "text!snippets/judgment/cases/view.html",
     "http"
   ], handler);
 

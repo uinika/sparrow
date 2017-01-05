@@ -2,7 +2,7 @@ define(
   [
     "backbone",
     "handlebars",
-    "text!snippets/dashboard/raw.html",
+    "text!snippets/dashboard/view.html",
     "router"
   ],
   function (Backbone, Handlebars, Html, Router) {
