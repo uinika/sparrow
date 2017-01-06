@@ -9,7 +9,7 @@ define(
     return Backbone.View.extend({
       id: "upload",
       initialize: function () {
-        this.render();
+
       },
       template: Handlebars.compile(Html),
       events: {

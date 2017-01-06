@@ -9,7 +9,6 @@ define(
     return Backbone.View.extend({
       id: "template",
       initialize: function () {
-        this.render();
       },
       template: Handlebars.compile(Html),
       events: {

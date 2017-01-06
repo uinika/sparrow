@@ -30,32 +30,32 @@ define(
       },
       login: function () {
         var loginView = new Login;
-        this.app.html(loginView.$el);
+        this.app.html(loginView.render().$el);
       },
       dashboard: function () {
         var dashboardView = new Dashboard;
         this.app.html(this.layoutView.$el)
-          .find("#main").html(dashboardView.$el);
+          .find("#main").html(dashboardView.render().$el);
       },
       cases: function () {
         var casesView = new Cases;
         this.app.html(this.layoutView.$el)
-          .find("#main").html(casesView.$el);
+          .find("#main").html(casesView.render().$el);
       },
       editor: function () {
         var editorView = new Editor;
         this.app.html(this.layoutView.$el)
-          .find("#main").html(editorView.$el);
+          .find("#main").html(editorView.render().$el);
       },
       upload: function () {
         var uploadView = new Upload;
         this.app.html(this.layoutView.$el)
-          .find("#main").html(uploadView.$el);
+          .find("#main").html(uploadView.render().$el);
       },
       template: function () {
         var templateView = new Template;
         this.app.html(this.layoutView.$el)
-          .find("#main").html(templateView.$el);
+          .find("#main").html(templateView.render().$el);
       },
     });
     return new Router();

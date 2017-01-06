@@ -38,7 +38,6 @@ define(
       id: "login",
       template: Handlebars.compile(Html),
       initialize: function () {
-        this.render();
       },
       events: {
         "input": "checked",

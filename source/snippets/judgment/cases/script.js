@@ -35,7 +35,6 @@
       initialize: function () {
         var model = new Model();
         this.listenTo(this.model, 'change', this.render);
-        this.render();
       },
       template: Handlebars.compile(Html),
       events: {},
