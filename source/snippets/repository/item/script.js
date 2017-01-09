@@ -2,12 +2,13 @@ define(
   [
     "backbone",
     "handlebars",
-    "text!snippets/judgment/template/view.html"
+    "text!snippets/repository/item/view.html"
   ],
   function (Backbone, Handlebars, Html) {
     return Backbone.View.extend({
-      id: "template",
+      id: "item",
       initialize: function () {
+
       },
       template: Handlebars.compile(Html),
       events: {

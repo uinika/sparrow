@@ -43,7 +43,7 @@ body {
   left: 3px;
 }
 #layout .main-header .sidebar-toggle:before {
-  content: "\f258" !important;
+  content: "\f00a" !important;
 }
 #login {
   position: absolute;

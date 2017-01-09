@@ -2,8 +2,7 @@ define(
   [
     "backbone",
     "handlebars",
-    "text!snippets/judgment/editor/view.html",
-    "router"
+    "text!snippets/judgment/editor/view.html"
   ],
   function (Backbone, Handlebars, Html, Router) {
     return Backbone.View.extend({
