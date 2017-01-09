@@ -28,7 +28,7 @@ Gulp.task("default", () => {
   combine();
   Gulp.watch(lessSource, combine);
   // nodemon
-  const serverSource = "./mock/server.js" 
+  const serverSource = "./test/server.js" 
   Nodemon({
     script: serverSource,
     execMap: {js: "node --harmony"},
