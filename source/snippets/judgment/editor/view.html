@@ -1,26 +1,111 @@
+<section class="content-header">
+  <h1>
+    新建文书
+    <small>新建一份裁判文书</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-book"></i>编辑器</a></li>
+    <li class="active">新建文书</li>
+  </ol>
+</section>
 <section class="content">
   <div class="column">
-    <!-- editor -->
-    <div class="left col-md-9">
-      <div class="nav-tabs-custom">
-        <ul class="nav nav-tabs pull-right">
-          <li class="pull-left header"><i class="fa fa-list"></i>文书目录</li>
-        </ul>
-        <div class="tab-content">
-          舟桥
+    <div class="col-md-12">
+      <div class="box box-default">
+        <div class="box-header with-border">
+          <i class="fa fa-header" data-toggle="control-sidebar"></i>
+          <div class="box-tools pull-right">
+            <a id="event-min-max" class="btn btn-box-tool">
+              <i class="fa fa-arrows"></i>
+              <span class="sr-only">Toggle navigation</span>
+            </a>
+          </div>
+        </div>
+        <div class="box-body" style="display: block;">
+          <article contenteditable="true">
+            <div class="center">
+              <style>
+                #judgment #head #courtName {
+                  text-align: center;
+                  line-height: 25pt;
+                  margin: 0.5pt 0cm;
+                  font-family: 宋体;
+                  font-size: 22pt;
+                }
+                #judgment #head #lawCaseTitle {
+                  text-align: center;
+                  line-height: 30pt;
+                  margin: 0.5pt 0cm;
+                  font-family: 仿宋;
+                  font-size: 26pt;
+                }
+                #judgment #head #lawCaseCode {
+                  text-align: right;
+                  line-height: 30pt;
+                  margin: 0.5pt 0cm;
+                  font-family: 仿宋;
+                  font-size: 16pt;
+                }
+                #judgment #body p {
+                  line-height: 25pt;
+                  text-align: justify;
+                  text-justify: inter-ideograph;
+                  text-indent: 30pt;
+                  margin: 0.5pt 0cm;
+                  font-family: 仿宋;
+                  font-size: 16pt;
+                }
+                #judgment #foot {
+                  float: right;
+                  width: 17em;
+                  margin: 0.5pt 72pt 0.5pt 0cm;
+                }
+                #judgment #foot p {
+                  line-height: 25pt;
+                  font-family: 仿宋;
+                  font-size: 16pt;
+                }
+              </style>
+              <div id="judgment">
+                <div id="head">
+                  <p placeholder="文书标题-法院名称" id="courtName">成都高新技术产业开发区人民法院</p>
+                  <p placeholder="文书标题-文书名称" id="lawCaseTitle">民事判决书</p>
+                  <p placeholder="文书标题-案号" id="lawCaseCode">(2016)川0191民初482号</p>
+                </div>
+                <div id="body">
+                  <div id="judgment-top">
+                    <p placeholder="首部-当事人" id="accuser">原告：吴世玉，女，汉族，1936年5月28日出生，住成都市高新区创业路9号21栋1单元1号。</p>
+                    <p placeholder="首部-当事人" id="accuserAgent">委托诉讼代理人：周忠强，男，汉族，1989年6月10日出生，住成都市青羊区宁夏街136号附9号，系成都高新区社会事业局民政司法处推荐。</p>
+                    <p placeholder="首部-当事人" id="defendant">被告：陈真秀，女，汉族，1957年2月19日出生，住成都市高新区创业路9号16栋2单元7号。</p>
+                    <p placeholder="首部-当事人" id="defendantAgent">委托诉讼代理人：</p>
+                  </div>
+                  <div id="judgment-bottom">
+                    <p placeholder="首部-案件由来和审理经过" id="caseGeneral">原告吴世玉与被告陈真秀民间借贷纠纷一案，本院于2016年01月12日立案受理，并依法适用简易程序，于&lt;开庭日期&gt;公开开庭进行了审理。原告吴世玉及其委托代理人周忠强、被告陈真秀到庭参加诉讼。本案现已依法审理终结。</p>
+                    <p placeholder="事实-诉讼请求" id="claims">原告吴世玉诉称：&lt;原告诉称内容&gt;</p>
+                    <p placeholder="事实-证据" id="argued">被告陈真秀辩称：对&lt;金额&gt;借款没有意见，还未归还原告，利息不予认可。</p>
+                    <p placeholder="事实" id="factResult">事实</p>
+                    <p placeholder="本院认为">本院认为，</p>
+                    <p placeholder="裁判主文" id="caseMain">据此，依照《中华人民共和国合同法》第五十四条、第五十五条、第五十八条、第五十九条、第六十条、第九十三条、第九十四条、第九十七条、第一百零七条、第一百零九条、第一百一十四条、第二百条、第二百零五条、第二百零六条、第二百零七条、第二百一十一条，《中华人民共和国担保法》第十八条、第二十一条、第二十六条，《中华人民共和国公司法》第十四条第一款，《最高人民法院关于审理民间借贷案件适用法律若干问题的规定》第二十六条、第二十八条、第二十九条，《中华人民共和国民事诉讼法》第六十四条、第一百三十四条第一款、第一百四十四条之规定，判决如下：</p>
+                    <p placeholder="尾部-诉讼费用负担" id="legalCosts">案件受理费元（减半收取_元），诉讼保全费_元，共计_元，由原告吴世玉负担_元，被告陈真秀负担_元。</p>
+                    <p placeholder="尾部-告知事项" id="informInfo">如不服本判决，可在判决书送达之日起十五日内，向本院递交上诉状，并按照对方当事人的人数提出副本，上诉于四川省中级人民法院。</p>
+                  </div>
+                </div>
+                <div id="foot">
+                  <p placeholder="落款-审判长" id="chiefJudge">落款-审判长</p>
+                  <p placeholder="落款-审判员" id="judge">落款-审判员</p>
+                  <p placeholder="落款-日期" id="judgmentDate">落款-日期</p>
+                  <p placeholder="落款-书记员" id="courtClerk">落款-书记员</p>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </div>
-    <div class="center col-md-3">
-      <div class="nav-tabs-custom">
-        <ul class="nav nav-tabs pull-right">
-          <li class="pull-left header"><i class="fa fa-book"></i>裁判文书</li>
-        </ul>
-        <div class="tab-content">
-          舟桥
-        </div>
-      </div>
-    </div>
-    <!-- editor -->
   </div>
 </section>
+<!-- Tool Sidebar -->
+<aside class="control-sidebar control-sidebar-light">
+</aside>
+<div class="control-sidebar-bg"></div>
+<!-- Tool Sidebar -->

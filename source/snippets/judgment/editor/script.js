@@ -11,12 +11,16 @@ define(
       },
       template: Handlebars.compile(Html),
       events: {
-
+        "click #event-min-max": "eventMinMax"
       },
       render: function () {
         this.$el.html(this.template());
         return this;
+      },
+      eventMinMax: function() {
+        this.$(".content-header").toggle();
       }
+
     });
   }
 );
