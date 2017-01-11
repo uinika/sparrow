@@ -14,9 +14,11 @@ require.config({
     "router": "snippets/router",
     "http": "general/http",
     "util": "general/util",
+    /*----- widget -----*/
+    "jquery.iCheck": "libraries/theme/widget/iCheck/icheck",
+    "jquery.slimScroll": "libraries/theme/widget/slimScroll/jquery.slimscroll",
+
     /*----- plugin -----*/
-    "jquery.icheck": "libraries/plugin/iCheck/icheck",
-    "jquery.slimScroll": "libraries/plugin/slimScroll/jquery.slimscroll",
     "jquery.webcam": "libraries/plugin/webcam/jquery.webcam"
   },
   map: {
@@ -39,7 +41,7 @@ require.config({
     "http": ["jquery"],
     "util": ["jquery"],
     /*----- plugin -----*/
-    "jquery.icheck": ["jquery"],
+    "jquery.iCheck": ["jquery"],
     "jquery.slimScroll": ["jquery"],
     "jquery.webcam": ["jquery"]
   },
