@@ -12,11 +12,46 @@
   <div class="column">
     <div class="col-md-12">
       <div class="box box-default">
-        <div class="box-header with-border">
-          <i class="fa fa-header" data-toggle="control-sidebar"></i>
+        <div class="box-header">
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-cloud-upload"></i></button>
+            <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-save"></i></button>
+          </div>
+          &nbsp;
+          <div class="btn-group">
+            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-google"></i></button>
+            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-adn"></i></button>
+            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-undo"></i></button>
+            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-link"></i></button>
+            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-list-alt"></i></button>
+            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-th-list"></i></button>
+          </div>
+          &nbsp;
+          <div class="btn-group">
+            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-book"></i></button>
+            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-file"></i></button>
+            <button class="btn btn-default btn-sm" data-toggle="control-sidebar">
+              <i class="fa fa-header"></i>
+            </button>
+          </div>
+          &nbsp;
+          <div class="btn-group">
+            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-cog"></i></button>
+            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-cc"></i></button>
+          </div>
+          &nbsp;
+          <div class="btn-group">
+            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-stop"></i></button>
+            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-btc"></i></button>
+          </div>
+          &nbsp;
+          <div class="btn-group">
+            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-hdd-o"></i></button>
+            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-fire"></i></button>
+          </div>
           <div class="box-tools pull-right">
-            <a id="event-min-max" class="btn btn-box-tool">
-              <i class="fa fa-arrows"></i>
+            <a id="event-min-max" class="btn btn-box-tool sidebar-toggle" data-toggle="offcanvas">
+              <i class="fa fa-arrows "></i>
               <span class="sr-only">Toggle navigation</span>
             </a>
           </div>
@@ -25,6 +60,10 @@
           <article contenteditable="true">
             <div class="center">
               <style>
+                #judgment {
+                  padding: 10px 32px;
+                }
+                
                 #judgment #head #courtName {
                   text-align: center;
                   line-height: 25pt;
@@ -32,6 +71,7 @@
                   font-family: 宋体;
                   font-size: 22pt;
                 }
+                
                 #judgment #head #lawCaseTitle {
                   text-align: center;
                   line-height: 30pt;
@@ -39,6 +79,7 @@
                   font-family: 仿宋;
                   font-size: 26pt;
                 }
+                
                 #judgment #head #lawCaseCode {
                   text-align: right;
                   line-height: 30pt;
@@ -46,6 +87,7 @@
                   font-family: 仿宋;
                   font-size: 16pt;
                 }
+                
                 #judgment #body p {
                   line-height: 25pt;
                   text-align: justify;
@@ -55,11 +97,13 @@
                   font-family: 仿宋;
                   font-size: 16pt;
                 }
+                
                 #judgment #foot {
                   float: right;
                   width: 17em;
                   margin: 0.5pt 72pt 0.5pt 0cm;
                 }
+                
                 #judgment #foot p {
                   line-height: 25pt;
                   font-family: 仿宋;

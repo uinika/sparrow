@@ -38,7 +38,7 @@ require.config({
     /*----- general -----*/
     "http": ["jquery"],
     "util": ["jquery"],
-    /*----- general -----*/
+    /*----- plugin -----*/
     "jquery.icheck": ["jquery"],
     "jquery.slimScroll": ["jquery"],
     "jquery.webcam": ["jquery"]
@@ -46,8 +46,15 @@ require.config({
   waitSeconds: 0
 });
 
-require(["backbone", "admin", "router", "http", "util", "jquery.slimScroll", "jquery.webcam"],
-  function (Backbone, Admin, Router) {
+require([
+    /*----- core -----*/
+    "backbone", "admin", "router",
+    /*----- general -----*/
+    "http", "util",
+    /*----- plugin -----*/
+    "bootstrap", "jquery.slimScroll", "jquery.webcam"
+  ],
+  function (Backbone) {
     Backbone.history.start()
   }
 );

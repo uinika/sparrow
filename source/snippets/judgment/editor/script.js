@@ -4,9 +4,9 @@ define(
     "handlebars",
     "text!snippets/judgment/editor/view.html"
   ],
-  function (Backbone, Handlebars, Html, Router) {
+  function (Backbone, Handlebars, Html) {
     return Backbone.View.extend({
-      id: "template",
+      id: "editor",
       initialize: function () {
       },
       template: Handlebars.compile(Html),
