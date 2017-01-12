@@ -2,9 +2,10 @@ define(
   [
     "backbone",
     "handlebars",
+    "admin",
     "text!snippets/layout/view.html"
   ],
-  function (Backbone, Handlebars, Html) {
+  function (Backbone, Handlebars, Admin, Html) {
     return Backbone.View.extend({
       id: "layout",
       initialize: function () {

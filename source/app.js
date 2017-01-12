@@ -8,6 +8,8 @@ require.config({
     "jquery": "libraries/core/jquery",
     "underscore": "libraries/core/underscore",
     "backbone": "libraries/core/backbone",
+    "backbone.marionette": "libraries/core/backbone.marionette",
+    "backbone.radio": "libraries/core/backbone.radio",
     "handlebars": "libraries/core/handlebars",
     "bootstrap": "libraries/theme/bootstrap/js/bootstrap",
     /*----- general -----*/
@@ -17,7 +19,6 @@ require.config({
     /*----- widget -----*/
     "jquery.iCheck": "libraries/theme/widget/iCheck/icheck",
     "jquery.slimScroll": "libraries/theme/widget/slimScroll/jquery.slimscroll",
-
     /*----- plugin -----*/
     "jquery.webcam": "libraries/plugin/webcam/jquery.webcam"
   },
@@ -35,6 +36,8 @@ require.config({
       deps: ["underscore", "jquery"],
       exports: "Backbone"
     },
+    "backbone.radio": ["backbone"],    
+    "backbone.marionette": ["backbone.radio"],
     "bootstrap": ["jquery"],
     "admin": ["jquery", "bootstrap"],
     /*----- general -----*/
@@ -50,13 +53,13 @@ require.config({
 
 require([
     /*----- core -----*/
-    "backbone", "admin", "router",
+    "backbone", "admin", "router", "backbone.marionette",
     /*----- general -----*/
     "http", "util",
     /*----- plugin -----*/
     "bootstrap", "jquery.slimScroll", "jquery.webcam"
   ],
-  function (Backbone) {
-    Backbone.history.start()
+  function (Backbone, Admin) {
+    Backbone.history.start();
   }
 );

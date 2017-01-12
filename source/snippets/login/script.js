@@ -1,13 +1,13 @@
 define(
   [
-    "router",
+    "backbone",
     "handlebars",
     "http",
     "text!snippets/login/view.html",
     "jquery.iCheck",
     "css!libraries/theme/widget/iCheck/square/blue.css"
   ],
-  function (Router, Handlebars, Http, Html) {
+  function (Backbone, Handlebars, Http, Html) {
 
     var Model = Backbone.Model.extend({
       initialize: function () {},
@@ -37,8 +37,7 @@ define(
     var View = Backbone.View.extend({
       id: "login",
       template: Handlebars.compile(Html),
-      initialize: function () {
-      },
+      initialize: function () {},
       events: {
         "input": "checked",
         "click .btn": "login"
@@ -58,6 +57,6 @@ define(
     });
 
     return View;
-    
+
   }
 );

@@ -2,9 +2,10 @@ define(
   [
     "backbone",
     "handlebars",
-    "text!snippets/judgment/editor/view.html"
+    "text!snippets/judgment/editor/view.html",
+    "admin"
   ],
-  function (Backbone, Handlebars, Html) {
+  function (Backbone, Handlebars, Html, Admin) {
     return Backbone.View.extend({
       id: "editor",
       initialize: function () {
@@ -19,6 +20,7 @@ define(
       },
       eventMinMax: function() {
         this.$(".content-header").toggle();
+        Admin
       }
 
     });
