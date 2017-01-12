@@ -4,8 +4,7 @@ define(
     "handlebars",
     "http",
     "text!snippets/login/view.html",
-    "jquery.iCheck",
-    "css!libraries/theme/widget/iCheck/square/blue.css"
+    "jquery.iCheck"
   ],
   function (Backbone, Handlebars, Http, Html) {
 

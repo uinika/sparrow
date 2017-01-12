@@ -36,7 +36,7 @@ require.config({
       deps: ["underscore", "jquery"],
       exports: "Backbone"
     },
-    "backbone.radio": ["backbone"],    
+    "backbone.radio": ["backbone"],
     "backbone.marionette": ["backbone.radio"],
     "bootstrap": ["jquery"],
     "admin": ["jquery", "bootstrap"],
@@ -44,7 +44,7 @@ require.config({
     "http": ["jquery"],
     "util": ["jquery"],
     /*----- plugin -----*/
-    "jquery.iCheck": ["jquery"],
+    "jquery.iCheck": ["jquery", "css!libraries/theme/widget/iCheck/square/blue.css"],
     "jquery.slimScroll": ["jquery"],
     "jquery.webcam": ["jquery"]
   },
@@ -59,7 +59,12 @@ require([
     /*----- plugin -----*/
     "bootstrap", "jquery.slimScroll", "jquery.webcam"
   ],
-  function (Backbone, Admin) {
+  function (Backbone, Admin, Router) {
+    var router = new Router();
     Backbone.history.start();
+    // backbone debugger
+    if (window.__backboneAgent) {
+      window.__backboneAgent.handleBackbone(Backbone);
+    }
   }
 );
