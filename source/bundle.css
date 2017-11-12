@@ -18,20 +18,19 @@ body {
   width: 100%;
   height: 100%;
 }
-#dasbhoard .widget-user-header h5 {
-  margin: 0;
-}
 #layout .emblem {
   display: inline-block;
   width: 46px;
   height: 46px;
   position: relative;
   top: 1px;
-  background: url("assets/logo.png") no-repeat;
   background-size: 46px;
 }
 #layout .logo-lg {
   line-height: 0;
+  font-size: 22px;
+  margin-left: -13px;
+  margin-top: -5px;
 }
 #layout .logo-lg span:nth-child(2) {
   position: relative;
@@ -54,6 +53,9 @@ body {
   padding-bottom: 50%;
   background: url("assets/sparrow.png") no-repeat;
   background-size: 150px;
+}
+#dasbhoard .widget-user-header h5 {
+  margin: 0;
 }
 #cases .box-title {
   font-size: 16px;
